@@ -1,0 +1,199 @@
+* {font-family: 'Microsoft YaHei'}
+body {background:#fff;margin:0 auto 0 auto;}
+p {font-size: 14px;}
+body, th, td, input, div, textarea,caption {font-size:12px;color:#000;font-family:Verdana,Geneva,Arial,helvetica,sans-serif;line-height:160%;}
+input {line-height:100%;}
+a:link,a:visited {color:#005aaa;text-decoration:none;}
+a:hover,a:active {color:#005aaa;text-decoration:underline;}
+img {border:0;}
+hr {display:none;}
+caption {text-align:left;font-weight:bold;}
+em {font-style:normal;font-weight:bold;}
+
+/* ------ Body ------------------- */
+
+body.content {margin:10px 10px 0 10px;}
+body.home {margin:0 10px 10px 10px;}
+body.home #containerMain {width:100%;float:left;}     
+#page_home .pageOperation {padding:2px 12px 0 0;text-align:right;float:right;}
+#page_home .txt {width:76px;padding:0 0 0 0;margin:3px 0 3px 0;font-size:12px!important;font-size:11px;height:16px;line-height:16px;}
+#page_home .txtShort {width:76px;font-size:12px!important;font-size:11px;padding:0 0 0 0;margin:0 0 3px 0;height:16px;line-height:16px;}
+#page_home #dologin label {display:block;text-align:left;}
+#page_home .login {margin:0;padding:0;}
+#page_home .tip {/*margin-left:60px;*/}
+#page_home .searchTextarea {width:280px;height:18px;line-height:18px;}
+.box {margin:0 0 6px 0;float:left!important;float:none;width:99%;}
+.box ul {padding:0; width:100%;}
+.box li {margin:0;}
+.tipstitle {padding:6px 0 4px 14px;height:18px!important;height:/**/20px;font-size:13px;background:#f3f7fd;font-weight:bold;line-height:20px;color:#4D4D4D;}
+
+/* ----- Page Head -------------- */
+
+.pageHead {width:100%;float:left;clear:both;}
+.pageHead h1 {display:none;}
+.pageHead .title {margin:0 0 0 0;padding:0 0 0 0;}
+.pageHead .title li {float:left;display:block;line-height:28px;padding:0 10px 0 10px;}
+.pageHead .title li.active {background:url(ico_titleview.gif) no-repeat center bottom;font-size:14px;font-weight:bold;color:#000;}
+.headerContainer {clear:both;width:100%;float:left;margin:0 0 6px 0;background:url(top_bg.jpg) no-repeat right top;}
+.logo {text-align:left;float:left;height:64px;}
+.logo img {background:url(logo.gif) no-repeat -3px 0; background-position:center;height:60px;width:180px;}
+.switch {left:219px;line-height:19px;position:absolute;top:11px!important;top:9px;}
+.pageOperation {padding:2px 12px 0 0;text-align:left;float:right;}
+.tabtitle {background:#cce0f5;border-top:5px solid #cce0f5;}
+.tabtitle td {border-bottom:1px solid #aac1de;font-size:14px;font-weight:bold;}
+.tabtitle td.selected {border:1px solid #aac1de;border-bottom:none;height:27px;line-height:27px;background:#f2f7fc}
+.tabtitle td a {width:100%;height:27px;line-height:27px;}
+.tabtitle td a:hover {color:#2c70c0;}
+
+/* ----- Page Body (help) ---------------- */
+
+dl#serviceHelp dd img {background:url(ico_service_help.gif) no-repeat 0 0;}
+.pageBodyHelp {float:left;background:#fff;margin:6px 0 0 0;width:100%;}
+.helpBodyLeft {width:188px;float:left;margin:6px 0 0 -100%;border:1px solid #AAC1DE;}
+.helpBodyLeft ul {list-style-type:none;margin:20px;}
+.helpBodyLeft ul li {line-height:200%;}
+.helpBodyLeft a:link {color:#005aaa;text-decoration:none;}
+.helpBodyLeft a:visited {color:#005aaa;text-decoration:none;}
+.helpBodyLeft a:hover,.helpBodyLeft a:active {color:#fff;background-color:#156FE6;text-decoration:none;}
+.listColumn h2 {color:#005AAA;font-size:14px;line-height:140%;margin:10px 0 10px 0;padding:0 0 0 0;width:auto;}
+.listColumn ol li{font-size:14px;line-height:160%;}
+.helpBodyRight {margin:0 0 0 200px;background:#fff;padding-left:6px;}
+
+/* ----- Page BodyLeft -------------- */
+
+.pageBody {float:left;margin:6px 0 0 0;width:100%;}
+#faqDetail h2 {color:#005AAA;font-size:14px;line-height:140%;margin:10px 0 0 0;padding:0 0 0 0;width:auto;}
+.containerBodyLeft {margin:0 252px 0 0;background:#fff;height:auto!important;min-height:244px;height:244px;}
+#serviceTitle {background:#F3F7FD;padding:10px;clear:both;border-top:1px solid #CCE0F5;border-bottom:1px solid #CCE0F5;}
+#serviceTitle dl {float:left;margin:0 0 0 30px!important;margin:0 0 0 15px;padding:0 0 0 44px;height:50px;border-bottom:1px solid #eeeff0;}
+#serviceTitle dt {font-size:14px;font-weight:bold;}
+#serviceTitle dd {color:#798699;line-height:120%;}
+#serviceTitle dt, #serviceTitle dd {text-align:left;margin:0 0 0 0;padding:0 0 0 0;}
+.operateBarContainer {background:#cce0f5;border-bottom:1px solid #B7CDE4;padding:6px 12px 6px 12px;}
+.operateBarRight {float:right;}
+
+/* ----- (loginpage) ------------ */
+
+#serviceLink,#faq10 {padding:0 0 20px 0;border:1px solid #B7CDE5;margin:0 0 5px 0;}
+#serviceLink dl {width:44%;padding:11px 1px 1px 21px;margin:20px auto 0 10px;float:left;height:55px;}
+#serviceLink .desc {width:44%;padding:10px 0 0 20px;margin:20px auto 0 10px;float:left;height:55px;background:#FFFCDF;border:1px solid #EFE795;}
+#serviceLink dt {font-size:14px;}
+#serviceLink dt, #serviceLink dd {float:left;text-align:left;margin:0 0 0 4px;padding:0 0 0 0;width:208px;}
+#serviceLink dd {color:#798699;line-height:120%;height:30px;}
+#serviceLink dl dd img {width:35px;height:32px;}
+#serviceLink dd.icon {float:left;width:40px;margin:0 0 0 0;padding:0 0 0 0;}
+.faqTopTen_l a:link {color:#005aaa;text-decoration:none;}
+.faqTopTen_l a:visited {color:#333;text-decoration:none;}
+.faqTopTen_l a:hover,.faqTopTen_l a:active {color:#fff;padding:2px 2px 2px 2px;background-color:#156FE6;text-decoration:underline;}
+.faqTopTen_l{margin:0 0 0 30px;font-size:14px;}
+.faqTopTen_l ul {width:44%;float:left;margin:20px auto 0 auto;}
+.faqTopTen_l ul li {line-height:130%;}
+.searchBar {margin:1px;text-align:center;padding:0;height:100px;}
+
+/* ----- (faq) ------------------ */
+
+dl#serviceFaq dd img, #serviceTitle #serviceFaq {background:url(ico_service_faq.gif) no-repeat 0 0;}
+.searchButton {padding:0 6px 0 6px;text-align:center;line-height:140%;}
+#formSearch {padding:20px 0 0 0;margin:0 0 0 0;height:35px;	width:100%;}
+#formSearch label {font-size:14px;color:#000;font-weight:bold;}
+#formSearch span {color:#c2b18e;}
+.input01 {border:#7f9db9 1px solid;height:18px;line-height:18px;}
+.searchResultList {clear:both;}
+.searchResultList .count {clear:both;line-height:32px;padding:0 12px 0 12px;color:black;font-size:14px;background:#FDFFC6;margin:0 0 6px 0;width:auto;}
+.searchResult {padding:0 20px 0 20px;clear:both;border-top:1px dotted #CCCCCB;}
+.searchResult h2 {font-size:14px;line-height:120%;margin:0 0 0 0;padding:12px 0 4px 0;width:auto;color:#005aaa;display:block;}
+.searchResult .content {padding:0 0 24px 0;clear:both;text-align:justify;text-justify:distribute;color:#798699;font-size:14px;}
+.searchResult .content p, .searchResult .content td, .searchResult .content div {color:#798699;overflow:auto;overflow-x:hidden;width:100%;font-size:14px;}
+#faqList {line-height:200%;}
+#faqList hr {width:98%;text-align:center;height:1px;color:#ccc;display:block;}
+#faqList ul li {font-size:14px;}
+#faqList ol li a:link,.faqTopTen a:link {color:#005aaa;text-decoration:none;}
+#faqList ol li a:visited,.faqTopTen a:visited {color:#333;text-decoration:none;}
+#faqList ol li a:hover,#faqList ol li a:active,.faqTopTen a:hover,.faqTopTen a:active {color:#fff;padding:2px 2px 2px 2px;background-color:#156FE6;text-decoration:underline;}
+.faqTopTen {float:left;width:42%;margin:20px 2% 0 2%;font-size:14px;}
+.faqTopTen h3 {font-size:14px;margin:0 0 0 0;}
+.faqTopTen ul {padding:0 0 0 20px;margin:6px 0 0 0;}
+.faqTopTen ul li {line-height:130%;}
+.contentDetail {float:left;padding:0 0 10px 0;width:100%;overflow-x:hidden;border-top:1px dotted #CCCCCB;}
+.contentDetail .title {padding:10px 20px 16px 20px;clear:both;text-align:justify;text-justify:distribute;font-weight:bold;color:#005aaa;font-size:14px;}
+.contentDetail .content {color:#333333;padding:3px 10px 0 5px;clear:both;text-align:justify;text-justify:distribute;font-size:14px;}
+.contentDetail .content p, .contentDetail .content td, .contentDetail .content div {color:#333333;font-size:14px;}
+.returnTop{padding:6px 0 0 0;clear:both;text-align:left;color:#555555;margin:0 0 10px 0;}
+.returnTop a:link,.returnTop a:visited,.returnTop a:hover,.returnTop a:active {color:#555555;}
+
+/* ------ (feedback) --------- */
+
+dl#serviceFeedback dd img, #serviceTitle #serviceFeedback {background:url(ico_service_feedback.gif) no-repeat 0 0;}
+.operationBar {background-position:0 0;margin:31px 0 31px 0;}
+
+/* ----- (static_*) ----------- */
+
+dl#serviceLogin dd img, #serviceTitle #serviceLogin {background:url(ico_service_login.gif) no-repeat 0 0;}
+dl#serviceBonus dd img, #serviceTitle #serviceBonus {background:url(ico_service_bonus.gif) no-repeat 0 0;}
+dl#serviceSend dd img, #serviceTitle #serviceSend {background:url(ico_service_send.gif) no-repeat 0 0;}
+dl#serviceRecieve dd img, #serviceTitle #serviceRecieve {background:url(ico_service_recieve.gif) no-repeat 0 0;}
+.statList {border-collapse:separate!important;border-collapse:collapse;border-spacing:0px;float:none;clear:both;width:100%;}
+.statList th, .statList td {padding:0 5px 0 5px;text-align:left;font-size:12px!important;}
+.statList th {height:auto!important;height:21px;border-top:1px solid #fff;border-left:1px solid #fff;border-right:1px solid #c4cacd;border-bottom:1px solid #c4cacd;color:#797a7b;background:#f2f4f6;line-height:21px;font-weight:normal;}
+.statList th.end {border-right:0;}
+.statList td {border-bottom:1px solid #e3e6eb;height:auto!important;height:27px;line-height:27px;vertical-align:baseline;}
+.statList td img {margin:7px 0 0 0;vertical-align:baseline;}
+th.date {width:100px;}
+th.msg {width:100px;border-right:0;}
+th.operat {width:120px;border-right:0;}
+th.time {width:40px;}
+th.desc {width:75px;}
+th.ip {width:100px;}
+th.city {width:220px;border-right:0;}
+th.bonusAdd {width:60px;}
+th.bonusDec {width:70px;}
+th.count {width:120px;border-right:0;}
+td.right {text-align:right;}
+td.noRecord {background:#ffffe9;text-align:center;height:40px;line-height:40px;vertical-align:center;color:#999;}
+.date, .time {text-align:right;}
+.operat {width:120px;}
+.folder {width:60px;}
+.filter {width:80px;}
+.to {width:140px;}
+.of {width:100%;*white-space:normal!important;word-break:break-all;height:auto!important;*height:22px!important;overflow:hidden;padding-top:4px;text-overflow:ellipsis;}
+.rowJunkMail td, .rowJunkMail td div {color:#000;}
+.rowNormal td, .rowNormal td div {color:#070;}
+.btn {line-height:140%;padding:0 10px 0 10px;margin:6px 0 0 2px;font-size:12px;}
+.msg {margin:0 0 0 5px;}
+.ContainerRecordList {width:99%;}
+.infoBar {clear:both;border:1px solid #fadc80;margin:10px auto 8px auto;padding:8px 6px 6px 28px;}
+.infoBar, .infoBar div {line-height:130%;color:#333;text-align:left;}
+.infoBar p {margin:0 0 0 0;color:#999;}
+.infoAlert {background:#fff9e3 url(ico_info_alert.gif) no-repeat 8px 8px;}
+.infoError {background:#fff9e3 url(ico_info_error.gif) no-repeat 8px 8px;}
+.infoBar h3 {font-size:12px;margin:0 0 0 0;padding:0 0 0 0;}
+
+/* ----- Page BodyRight -------------- */
+
+.containerBodyRight {width:255px;float:left;clear:right;margin:6px 0 0 -255px;}
+.panelInfo {margin:0 auto 0 auto;padding:0;float:right;border:1px solid #B7CDE5;width:240px;}
+.personalInfo {margin:6px 6px 0 6px;}
+.info span {word-break :break-all;word-wrap :break-word;}
+.info {margin:0 0 0 5px;padding:5px 0 0 0;border-top:1px solid #eeeff0;clear:both;}
+#dologin input {vertical-align:top;}
+.panelLogin {margin:0 auto 0 auto;padding:0;width:240px;float:right;border:1px solid #B7CDE5;}
+.panelLogin h2 {display:block;font-size:14px;}
+.panelLogin div {margin:0 0 6px 0;}
+.panelLogin input {font-size:12px;vertical-align:middle;}
+.panelBody {padding:10px;}
+.ss {font-family:MS Sans Serif; font-size:10.5pt; color:#333333;}
+ul li {line-height: 26px}
+.subfix {color:#3163c0;font-weight:bold;line-height:24px;}
+.text {border:1px solid #999;height:20px;line-height:18px;padding:0 2px 0 2px;width:150px;font-size:14px;}
+label.column {width:60px;display:block;clear:both;line-height:120%;}
+.addrtitle {color:#798699;}
+.hLogin {height:auto!important;height:208px;mini-height:208px;}
+
+/* ----- Page Footer ------------ */
+
+.pageFooter {text-align:center;margin:6px 0 10px 0;float:left;width:100%;clear:both;}
+.navPageBottom {height:24px;background:#eaf3ff;line-height:24px;clear:both;}
+.navPageBottom a:link, .navPageBottom a:visited, .navPageBottom a:hover, .navPageBottom a:active {border-right:1px solid #3163c0;padding:0 8px 0 4px;text-decoration:underline;}
+.navPageBottom a.end:link, .navPageBottom a.end:visited, .navPageBottom a.end:hover, .navPageBottom a.end:active {border-right:0;} 
+.cLight {color:#888;}
+.copyright {font-size:11px;margin:0;padding:0;clear:both;}
