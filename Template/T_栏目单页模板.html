@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{Stl.SiteName}</title>
+    <link href="{Stl.SiteUrl}/css/css.css" rel="stylesheet" type="text/css" />
+    <link href="{Stl.SiteUrl}/css/news.css" rel="stylesheet" type="text/css" />
+    <script src="{Stl.SiteUrl}/scripts/common.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <!--头部-->
+        <stl:include file="@/include/header.html"></stl:include>
+        <!--主内容-->
+        <div id="content">
+            <div id="light" class="white_content"><a href="javascript:void(0)" onclick="closeimg(this)">点这里关闭</a></div>
+            <div id="fade" class="black_overlay"></div>
+            <!--左侧边栏-->
+            <stl:include file="@/include/sidebar.html"></stl:include>
+            <!--content-left-->
+            <div id="dqwz">
+                <stl:location separator=" > " target="_self" wordNum="6"></stl:location>
+            </div>
+            <div id="lm-right">
+                <div id="news">
+                    <stl:channel type="content" wordNum="0"></stl:channel>
+                </div>
+            </div>
+        </div>
+        <stl:include file="@/include/footer.html"></stl:include>
+    </div>
+    <!--box-->
+</body>
+
+</html>
+

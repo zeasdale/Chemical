@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/T_系统首页模板.htm" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Template/Content/T_系统内容模板.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Template/T_gsry.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Template/T_gywm.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Template/T_lianxime.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Template/T_mjzs.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Template/T_news.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Template/T_zxly.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Template/T_搜索.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Template/T_系统栏目模板.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Template/T_评论.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/channels/63.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/channels/64.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/channels/64_2.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/channels/65.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/channels/66.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/channels/67.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/channels/68.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/64/1200.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/64/1201.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/64/1202.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/64/1203.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/64/1204.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/64/761.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/64/762.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/64/763.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/64/764.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/70/1197.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/70/1198.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/70/1199.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/70/756.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/70/757.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/70/758.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/70/759.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/contents/70/760.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/include/bottom.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/include/gywm-header.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/include/liuyan-header.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/include/lx-header.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/include/mj-header.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/include/news-header.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/include/nr-header.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/include/ry-header.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/index.htm" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/utils/comments.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/utils/search.html" charset="UTF-8" />
+  </component>
+</project>

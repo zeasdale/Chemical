@@ -1,0 +1,26 @@
+<div id="tou">
+    <div id="swsy">
+        <span style="margin-right:10px;"><a href="#"onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.kind-chemical.com');return(false);">设为首页</a></span>
+        <span style="margin-right:10px;"><a href="javascript:window.external.AddFavorite('http://www.kind-chemical.com','{Stl.SiteName}')">加入收藏</a></span>
+    </div>
+</div>
+<!--头部-->
+<div id="daohang">
+    <ul>
+        <li>
+            <stl:a ChannelIndex="首页">首页</stl:a>
+        </li>
+        <stl:channels groupChannel="首页栏目" channelIndex="首页">
+            <li>
+                <!-- <stl:a>{channel.title}</stl:a> -->
+                <stl:a>
+                    <stl:channel type="Title"></stl:channel>
+                </stl:a>
+            </li>
+        </stl:channels>
+    </ul>
+</div>
+<!--焦点图-->
+<div id="flash">
+    <stl:focusViewer channelIndex="焦点图" totalNum="4" height="200" width="990" isShowText="false"></stl:focusViewer>
+</div>

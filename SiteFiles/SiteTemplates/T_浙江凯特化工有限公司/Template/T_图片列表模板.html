@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{Stl.SiteName}</title>
+    <link href="{Stl.SiteUrl}/css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="{Stl.SiteUrl}/css/css.css" rel="stylesheet" type="text/css" />
+    <link href="{Stl.SiteUrl}/css/img-list.css" rel="stylesheet" type="text/css" />
+    <script src="{Stl.SiteUrl}/scripts/common.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <!--头部-->
+        <stl:include file="@/include/header.html"></stl:include>
+        <!--主内容-->
+        <div id="content">
+            <div id="light" class="white_content"><a href="javascript:void(0)" onclick="closeimg(this)">点这里关闭</a></div>
+            <div id="fade" class="black_overlay"></div>
+            <!--左侧边栏-->
+            <stl:include file="@/include/sidebar.html"></stl:include>
+            <!--content-left-->
+            <div id="dqwz">
+                <stl:location separator=" > " target="_self" wordNum="6"></stl:location>
+            </div>
+            <div id="lm-right">
+                <div id="right-list">
+                    <stl:dynamic>
+                        <stl:pageContents pageNum="3">
+                            <div class="list-left">
+                                <stl:a target="_self">
+                                    <stl:content type="ImageUrl" class="img-thumbnail"></stl:content>
+                                </stl:a>
+                                <div class="list-right">
+                                    <h3>
+                                        <stl:content type="Title"></stl:content>
+                                    </h3>
+                                    <div>
+                                        <stl:content type="Content" wordNum="100"></stl:content>
+                                        <stl:a target="_self">&nbsp;&nbsp;点击查看更多</stl:a>
+                                    </div>
+                                </div>
+                            </div>
+                        </stl:pageContents>
+                </div>
+                <div id="fanye">
+                    <table cellpadding="0" width="90%" cellspacing="0" height="40" align="center">
+                        <tr>
+                            <stl:pageItems autoHide="true">
+                                <td align="left">
+                                    <stl:pageItem type="FirstPage" text="首页"></stl:pageItem>&nbsp;|&nbsp;
+                                    <stl:pageItem type="PreviousPage" text="上一页"></stl:pageItem>&nbsp;|&nbsp;
+                                    <stl:pageItem type="NextPage" text="下一页"></stl:pageItem>&nbsp;|&nbsp;
+                                    <stl:pageItem type="LastPage" text="末页"></stl:pageItem>
+                                </td>
+                                <td align="right">当前页：
+                                    <stl:pageItem type="CurrentPageIndex"></stl:pageItem>/
+                                    <stl:pageItem type="TotalPageNum"></stl:pageItem>&nbsp;&nbsp;
+                                    <!-- [1]&nbsp;<a href="/moxing/channels/64_2.html">[2]</a>&nbsp;&nbsp;&nbsp; -->
+                                    <stl:pageItem type="PageSelect"></stl:pageItem>
+                                </td>
+                            </stl:pageItems>
+                            </stl:dynamic>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <stl:include file="@/include/footer.html"></stl:include>
+    </div>
+    <!--box-->
+</body>
+
+</html>
