@@ -6,8 +6,8 @@
     <meta name="Keywords" content="{Channel.Keywords}" />
     <meta name="Description" content="{Channel.Description}" />
     <title>{Stl.SiteName}</title>
-    <link href="{Stl.SiteUrl}/css/css.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{Stl.SiteUrl}/css/bootstrap/bootstrap.css">
+    <link href="{Stl.SiteUrl}/css/css.css" rel="stylesheet" type="text/css" />
     <script src="scripts/common.js"></script>
 </head>
 
@@ -38,8 +38,33 @@
             <div id="content-middle">
                 <div id="gsjj-title"></div>
                 <div id="dynamics">
-                    <img class="img-thumbnail pull-left" src="{Stl.SiteUrl}/images/indexContent.jpg" alt="" />
-                    <stl:channel channelIndex="行业动态" type="Content" wordNum="324"></stl:channel>
+                    <!--  <img class="img-thumbnail pull-left" src="{Stl.SiteUrl}/images/indexContent.jpg" alt="" />
+                    <stl:channel channelIndex="行业动态" type="Content" wordNum="324"></stl:channel> -->
+                    <!--  <stl:a target="_blank"><stl:content type="Title" wordNum="20"></stl:content></stl:a> -->
+                    <!-- <dl>
+                        <stl:contents channelIndex="行业动态" totalNum="">
+                            <dt>
+                                <stl:a>{content.title}</stl:a>
+                            </dt>
+                            <dd>{content.addDate}</dd>
+                        </stl:contents>
+                    </dl> -->
+                    <table style="width:100%;">
+                        <stl:contents channelIndex="行业动态" totalNum="">
+                            <tr style="border-bottom:1px dashed #ccc;">
+                                <td style="width:70%;height:30px;">
+                                    <stl:a>{content.title}</stl:a>
+                                </td>
+                                <td style="width:30%;">
+                                    {content.addDate}
+                                </td>
+                            </tr>
+                        </stl:contents>
+                        <tr>
+                            <td></td>
+                            <td><stl:a channelIndex="行业动态">更多>></stl:a></td>
+                        </tr>
+                    </table>
                 </div>
                 <div id="middle-bottom"></div>
             </div>

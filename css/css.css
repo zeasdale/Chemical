@@ -138,15 +138,19 @@ a:active {
     height: 289px;
     font-size: 12px;
     line-height: 24px;
-    padding: 5px;
     overflow: hidden;
+    padding:10px;
 }
-
-#dynamics img {
+#dynamics table{
+    margin: 0;
+    padding: 0;
+    width:100%;
+}
+/*#dynamics img {
     width: 200px;
     height: 140px;
     margin-right: 5px;
-}
+}*/
 
 #middle-bottom {
     height: 200px;
@@ -359,3 +363,4 @@ a:active {
     overflow: auto;
     text-align: right;
 }
+
