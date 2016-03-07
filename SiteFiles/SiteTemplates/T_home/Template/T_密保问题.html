@@ -1,0 +1,84 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{Stl.SiteName}</title>
+    <meta name="keywords" content="{stl:value type='META_KEYWORDS'}" />
+    <meta name="description" content="{stl:value type='META_DESCRIPTION'}" />
+    <link href="{Stl.SiteUrl}/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body> 
+    <stl:include file="/include/head.html"></stl:include> 
+    
+    <div class="mcon"> 
+      <stl:include file="/include/AccountSafe.html"></stl:include> 
+      <div class="mcR mcRx2"> 
+        <div class="m3bd_top">                
+          <div class="m3bd_st1">密保问题</div>
+          <div class="m3mb_p1">由用户选定的3个问题及应对答案组成，专门用于找回密码和设置其他密保.<br />主要包含用户的个人私有信息，包括：班主任姓名、配偶生日、大学室友等。</div>
+          <a class="m3hd_a1" id="setSecretPwd" href="javascript:;">现在设置</a>
+        </div>
+        <div class="m3hd_bom">
+          <strong class="f14">常见问题</strong>
+          <stl:dynamic>
+            <stl:pagecontents channelname="密保常见问题" pagenum="10">
+              <stl:a>
+                <p><strong>·</strong> <stl:a target="_blank">{Content.Title}</stl:a></p>
+              </stl:a>
+            </stl:pagecontents>
+          </stl:dynamic>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <!--修改密码弹出层 开始-->
+    <div class="mlayBg hide"></div>
+    <div class="mlay nmLayer2 hide">
+      <div class="mlay_t"><span class="fl">密保问题</span><img class="mrclose" src="{Stl.SiteUrl}/images/m2close.jpg" width="31" height="26" /></div>
+      <div class="mlay_ul" id="valDiv" style="text-align:center;margin-top:60px;">
+        <span style="  font-weight: bolder;color: red;display: block;font-size: 18px;margin-bottom: 10px;">请先验证密保问题</span>
+        <select class="mcr_sel nmlay_s1" style="float:none;margin-right:0;margin-bottom:10px;" name="selValidate" id="selValidate"></select><br/>
+        <input type="text" id="txtValidateAnswer" style="float:none;" name="txtValidateAnswer" placeholder="请输入答案" class="mlay_int" /><br/>
+        <button type="button" id="btnValidateQuestion" class="pubBtn mlay_btn"><span>验 证</span></button>
+      </div>
+      <div class="mlay_ul" id="setDiv" style="display:none;">
+        <ul>
+          <li>
+            <span class="mlay_s1">问题一</span>
+            <select class="mcr_sel nmlay_s1" name="selQuestion1" id="selQuestion1"></select>
+          </li>
+          <li>
+            <span class="mlay_s1">答案</span>
+            <input type="text" id="txtAnswer1" name="txtAnswer1" placeholder="请输入答案" class="mlay_int" />
+          </li>
+          <li>
+            <span class="mlay_s1">问题二</span>
+            <select class="mcr_sel nmlay_s1" name="selQuestion2" id="selQuestion2"></select>
+          </li>
+          <li>
+            <span class="mlay_s1">答案</span>
+            <input type="text" id="txtAnswer2" name="txtAnswer2" placeholder="请输入答案" class="mlay_int" />
+          </li>
+          <li>
+            <span class="mlay_s1">问题三</span>
+            <select class="mcr_sel nmlay_s1" name="selQuestion3" id="selQuestion3"></select>
+          </li>
+          <li>
+            <span class="mlay_s1">答案</span>
+            <input type="text" id="txtAnswer3" name="txtAnswer3" placeholder="请输入答案" class="mlay_int" />
+          </li>
+          <li><span class="mlay_s1">&nbsp;</span><button type="button" id="btnSubmitQuestion" class="pubBtn mlay_btn"><span>提 交</span></button></li>
+        </ul>
+      </div>
+    </div>
+    <!--修改密码弹出层 结束-->
+    <stl:include file="/include/footer.html"></stl:include> 
+    
+  </body>
+</html>
+<script src="{Stl.SiteUrl}/js/lib.js"></script>
+<stl:include file="/include/tipsAlert.html"></stl:include>  
+<script src="{Stl.SiteUrl}/js/app.js" id="controllerName" data-controller-name="secretPwd"></script> 
+
+

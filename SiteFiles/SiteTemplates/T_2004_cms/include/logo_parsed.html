@@ -1,0 +1,61 @@
+<div class="head">
+    <div class="logo">
+        <a href="http://www.siteserver.cn/">
+            <img src="/images/logo.jpg" width="222px" height="40px" />
+        </a>
+        <span>创建世界一流高科技企业</span>
+    </div>
+    <div class="search">
+        <form id="searchForm_27171" action="/utils/search.html" target="_blank"><style type="text/css"></style><script type="text/javascript">
+function relatedwordSearch(element){
+      if(!!element){
+         relatedwordSet(element);
+         document.getElementById('searchForm_27171').submit();
+         return false;
+      }
+}
+function relatedwordSet(element){
+     if(!!element){
+         $("input[name='word']").val($(element).attr("value"));
+     }
+}
+function stlSearchwordRelated_searchForm_27171(){
+      var searchword = $('input[name="word"]').val();
+      var filterSearchwordDataTemplate = $("#relatedwordtemplate_searchForm_27171").html();
+      if(!searchword){
+            $('#relatedwordpanel_searchForm_27171').html('未找到相关内容');
+            $('#relatedwordpanel_searchForm_27171').css('display','none');
+            return false;
+      }
+      else{
+           $.get('/sitefiles/services/cms/PageService.aspx?type=Type_GetSearchwords&publishmentSystemID=1', {searchword:searchword},function(data){
+           if(data.length == 0){                                                                                                                                     
+               $('#relatedwordpanel_searchForm_27171').html('未找到相关内容');
+               $('#relatedwordpanel_searchForm_27171').css('display','none');
+               return false;
+           }
+           else{
+                $('#relatedwordpanel_searchForm_27171').html('');
+                data=eval("("+data+")");
+                for(var i=0;i<data.length;i++){
+                $('#relatedwordpanel_searchForm_27171').append(filterSearchwordDataTemplate.replace(/{word}/g,data[i].searchWord)
+                .replace(/{resultcount}/g,data[i].searchResultCount));
+                }
+                $('#relatedwordpanel_searchForm_27171').css('display','block');
+           }
+           });
+     }
+}
+</script>
+            
+                <input type="hidden" name="dopost" value="search">
+                <input class="input1" placeholder="请输入关键词" type="text" name="word" onkeyup="stlSearchwordRelated_searchForm_27171()" autocomplete="off"/>
+                <input class="ss" type="submit" value="搜索" onclick="document.getElementById('searchForm_27171').submit();return false;"/>
+                <ul id="relatedwordpanel_searchForm_27171"></ul>
+                <script id="relatedwordtemplate_searchForm_27171" type="text/html">
+                    <li><a style="cursor:pointer;" onmouseover="relatedwordSet(this);" onclick="relatedwordSearch(this);" value="{word}" target="_blank">{word} 大约{resultcount}个结果</a></li>
+                </script>
+            </input>
+        <input type="hidden" id="channelID" name="channelID" value="1" /></form>
+    </div>
+</div>

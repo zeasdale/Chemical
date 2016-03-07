@@ -1,0 +1,44 @@
+
+<div class="headerBj">
+	<div class="header_top clear">
+    	<div class="right searchBox clear">
+            <form id="submitForm" action="/PE15001/utils/search.html"  target="_blank" >
+                <input type="text" name="word" class="searchText left" value="请输入关键字" onfocus="if (value==defaultValue)value=''" onblur="if(!value)value=defaultValue" />
+                <input type="hidden" name="type" value="Title" />
+                <input type="button" value="搜索" class="searchBtn  left" onclick="document.getElementById('submitForm').submit(); return false;" />
+            </form>
+        </div>
+    </div>
+	<div class="header_bottom clear">
+    	<div class="left logo" >
+                <stl:value type="LOGO" height="40"></stl:value>
+        </div>
+    	<div class="right header_right">
+        	<div class="navBox clear">
+                <ul class="nav clear right">
+                    <li class="nav_li">
+                        <a href="{Stl.SiteUrl}" class="nav_a">首页</a>
+                    </li>
+					<stl:channels groupChannel="导航" topLevel="0">
+                    <li class="nav_li">
+                    
+                        <stl:a class="nav_a">{Channel.Title}</stl:a>
+                        <ul>
+                            <div class="w_900Auto">
+                            <stl:channels>
+                                <li>
+                                    <stl:a>{Channel.Title}</stl:a>
+                                </li>
+                            </stl:channels>
+                                
+                            </div>
+                        </ul>
+                    </li>
+                    </stl:channels>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

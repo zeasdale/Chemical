@@ -1,0 +1,32 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{Stl.SiteName}</title>
+  <meta name="keywords" content="{stl:value type='META_KEYWORDS'}" />
+  <meta name="description" content="{stl:value type='META_DESCRIPTION'}" />
+  <link href="{Stl.SiteUrl}/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <stl:include file="/include/head.html"></stl:include> 
+  <div class="mcon">
+    <stl:include file="/include/AccountInfo.html"></stl:include> 
+    <div class="mcR">
+      <div class="mcr_t1">帐号绑定管理</div>
+      <div class="m2r_dl">
+        <dl>
+          <dd><img src="{Stl.SiteUrl}/images/zh_ico1.jpg" width="60" height="60" /><span class="fl">新浪微博</span><a href="#" id="wb" class="m2l_isbtn">点击绑定</a></dd>
+          <dd><img src="{Stl.SiteUrl}/images/zh_ico2.jpg" width="60" height="60" /><span class="fl">QQ</span><a href="#" id="qq" class="m2l_isbtn">点击绑定</a></dd>
+          <dd><img src="{Stl.SiteUrl}/images/zh_ico4.jpg" width="60" height="60" /><span class="fl">微信</span><a href="#" id="wx" class="m2l_isbtn">点击绑定</a></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="clear">
+    </div>
+  </div>
+  <stl:include file="/include/footer.html"></stl:include>   
+</body>
+</html>
+<script src="{Stl.SiteUrl}/js/lib.js"></script> 
+<stl:include file="/include/tipsAlert.html"></stl:include>
+<script src="{Stl.SiteUrl}/js/app.js" id="controllerName" data-controller-name="accountBind"></script>

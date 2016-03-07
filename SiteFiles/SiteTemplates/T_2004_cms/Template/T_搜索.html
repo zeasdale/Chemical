@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>搜索结果页</title>
+    <link rel="shortcut icon" href="{Stl.SiteUrl}/images/ico.ico" type="image/x-icon" />
+    <link href="{Stl.SiteUrl}/css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="{Stl.SiteUrl}/js/autowidth.js"></script>
+</head>
+<body>
+    <!--head-->
+    <stl:include file="@/include/header.html"></stl:include>
+    <!--head-->
+    <div id="main" class="zy gdtd">
+        <stl:include file="@/include/logo.html"></stl:include>
+        <div id="content">
+            <div class="conL3">
+                <h2 class="com1">搜索结果</h2>
+                <div class="list1">
+                    <stl:searchoutput>
+                        <ul>
+                            <stl:pagecontents pagenum="10">
+                                <li>
+                                    <h4>
+                                        <stl:a><b>{Content.Title}</b></stl:a>
+                                        (<stl:content type="AddDate" formatstring="yyyy年MM月dd日"></stl:content>)
+                                    </h4>
+                                    <p><stl:content type="Summary" wordnum="70"></stl:content></p>
+                                    <p><stl:a class="fc_blue2">查看全文 &gt;</stl:a></p>
+                                </li>
+                            </stl:pagecontents>
+                        </ul>
+                        <div class="page">
+                            <stl:pageitem type="FirstPage">
+                                <a href="{Current.Url}">&lt;&lt;首页</a>
+                            </stl:pageitem>
+                            <stl:pageitem type="PreviousPage">
+                                <a href="{Current.Url}">&lt;&lt;上一页</a>
+                            </stl:pageitem>
+                            <stl:pageitem type="PageNavigation">
+                                <stl:successtemplate>
+                                    <a href="{Current.Url}">{Current.Num}</a>
+                                </stl:successtemplate>
+                                <stl:failuretemplate>
+                                    <a class="on">{Current.Num}</a>
+                                </stl:failuretemplate>
+                            </stl:pageitem>
+                            <stl:pageitem type="NextPage">
+                                <a href="{Current.Url}">下一页&gt;</a>
+                            </stl:pageitem>
+                            <stl:pageitem type="LastPage">
+                                <a href="{Current.Url}">尾页&gt;&gt;</a>
+                            </stl:pageitem>
+                        </div>
+                    </stl:searchoutput>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--footer-->
+    <stl:include file="@/include/footer.html"></stl:include>
+    <!--footer-->
+    <script type="text/javascript" src="{stl.SiteUrl}/js/xh_roll.js"></script>
+    <script>
+        $(function () {
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                wrap: 'circular',
+                auto: 5
+            });
+        })
+    </script>
+</body>
+</html>

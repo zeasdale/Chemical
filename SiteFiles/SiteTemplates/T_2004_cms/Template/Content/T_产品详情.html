@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>{Content.Title}-{Channel.Title}-{Stl.SiteName}</title>
+    <link rel="shortcut icon" href="{Stl.SiteUrl}/images/ico.ico" type="image/x-icon" />
+    <link href="{Stl.SiteUrl}/css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="{Stl.SiteUrl}/js/autowidth.js"></script>
+</head>
+<body>
+    <!--head-->
+    <stl:include file="@/include/header.html"></stl:include>
+    <!--head-->
+    <div id="main" class="zy show kjy_cp1">
+        <stl:include file="@/include/logo.html"></stl:include>
+        <div class="banner">
+            <img src="{Channel.ImageUrl}" width="1200" height="520">
+            <div class="text">
+                <h2>{Channel.Title}</h2>
+                {Channel.Content}
+            </div>
+        </div>
+        <div id="content">
+            <div class="conL2">
+                <h2 class="mb20">{Content.Title}</h2>
+                <div class="downpic mb40">
+                    <img src="{stl:content type=ImageUrl no=2}" width="910" height="386">
+                    <a href="{Content.FileUrl}" class="downlink" target="_blank">下载解决方案PDF</a>
+                </div>
+                <div class="part part1 line2">
+                    <h3>核心技术</h3>
+                    <stl:content type="Content"></stl:content>
+                </div>
+                <div class="part part2 line2">
+                    <h3>产品介绍</h3>
+                    <stl:content type="ChanPinIntro"></stl:content>
+                </div>
+                <div class="part part3 mb30" style="margin-bottom: 0px; ">
+                    <h3>案例展示</h3>
+                    <ul class="list3li">
+                        <stl:contents channelname="案例展示" where=" Tags like '%{Content.Tags}%'">
+                            <li>
+                                <p><img src="{Content.ImageUrl}" width="228" height="165"></p>
+                                <div class="bg" style="display: none;"></div>
+                                <stl:a class="text fancybox" data-fancybox-group="gallery" style="display: none;">
+                                    <h3>{Content.Title}</h3>
+                                    <stl:content type="Content"></stl:content>
+                                </stl:a>
+                            </li>
+                        </stl:contents>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="conR4">
+                <div class="back align_r">
+                    <a href="{Channel.NavigationUrl}" class="btn_com btn_bb2">返回信息产业列表页 &gt;</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--footer-->
+    <stl:include file="@/include/footer.html"></stl:include>
+    <!--footer-->
+    <script type="text/javascript" src="{Stl.SiteUrl}/js/xh_roll.js"></script>
+    <script>
+        $(function () {
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                wrap: 'circular',
+                auto: 5
+            });
+        })
+    </script>
+</body>
+</html>

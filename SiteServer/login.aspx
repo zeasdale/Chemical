@@ -53,8 +53,10 @@
 
                         </li>
                         <li><span class="yun_s1">密码：</span>
-
-                            <asp:TextBox class="yun_int1" ID="Password" TextMode="Password" runat="server"/>
+                            <!--防止表单的自动填充功能-->
+                            <input type="password" style="display:none" />
+                            <!--防止表单的自动填充功能-->
+                            <asp:TextBox class="yun_int1" ID="Password" TextMode="Password" runat="server" />
                             <asp:RequiredFieldValidator
                                 ControlToValidate="Password" ID="RequiredFieldValidator1"
                                 ErrorMessage=" *" ForeColor="red"

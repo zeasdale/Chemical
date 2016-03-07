@@ -1,0 +1,10 @@
+<script>
+        if(getUrlVar('channelid')!='')
+             $pageInfo.channelID = getUrlVar('channelid');
+        if(getUrlVar('contentid')!='')
+           $pageInfo.contentID = getUrlVar('contentid');
+        function getUrlVar(key) {
+           var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search);
+           return result && decodeURIComponent(result[1]) || "";
+       }
+</script>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>{Content.Title}-{Channel.Title}-{Stl.SiteName}</title>
+    <link rel="shortcut icon" href="{Stl.SiteUrl}/images/ico.ico" type="image/x-icon" />
+    <link href="{Stl.SiteUrl}/css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="{Stl.SiteUrl}/js/autowidth.js"></script>
+</head>
+<body>
+    <!--head-->
+    <stl:include file="@/include/header.html"></stl:include>
+    <!--head-->
+    <div id="main" class="zy show show_tfzs">
+        <stl:include file="@/include/logo.html"></stl:include>
+        <div class="banner">
+            <img src="{Channel.ImageUrl}" width="1200" height="370">
+            <div class="text">
+                <h2>{Channel.Title}</h2>
+                <p>{Channel.Content}</p>
+            </div>
+        </div>
+        <div id="content">
+            <div class="menuLeft">
+                <stl:channels toplevel="1">
+                    <stl:if testtype="UpChannelOrSelf">
+                        <stl:successtemplate>
+                            <stl:a class="on"></stl:a>
+                        </stl:successtemplate>
+                        <stl:failuretemplate>
+                            <stl:a></stl:a>
+                        </stl:failuretemplate>
+                    </stl:if>
+                </stl:channels>
+            </div>
+            <script>
+                $(function () {
+                    $(".menuLeft a[rel='32']").addClass("on");
+
+                    // 定制合作
+                });
+            </script>
+            <div class="conL1">
+                <h1 id="title">{Content.Title}</h1>
+                <div class="bread">
+                    所属分类：<span class="type"><a href="{Channel.NavigationUrl}">{Channel.Title}</a></span><span class="date ml20">发布日期：<stl:content type="AddDate" formatstring="yyyy/MM/dd"></stl:content></span><span style="display:none">
+                        <script src="/plus/count.php?view=yes&amp;aid=1653&amp;mid=1" type="text/javascript" language="javascript"></script>264
+                    </span>
+                </div>
+                <div class="show_con" id="body">
+                    <p><stl:content type="Content"></stl:content></p>
+                </div>
+                <div class="fx">
+                    <a href="javascript:;" class="btn_com btn_fx jiathis jiathis_txt jiathis_separator jtico jtico_jiathis">分享到</a>
+                    <stl:printer titleid="title" bodyid="body" class="btn_com btn_dy">打印此页</stl:printer>
+                </div>
+                <div class="pernext">
+                    <p>
+                        <stl:navigation type="PreviousContent" tiptext="上一条：" emptytext="无"></stl:navigation>
+                    </p>
+                    <p>
+                        <stl:navigation type="NextContent" tiptext="下一条：" emptytext="无"></stl:navigation>
+                    </p>
+                </div>
+                <p class="more"><a href="{Channel.NavigationUrl}" class="btn_more">返回列表 &gt;</a></p>
+            </div>
+            <div class="conR5 pt40"><stl:a channelName="媒体预约"><img src="{Stl.SiteUtl}/images/mtyy.jpg" width="215" height="51"></stl:a></div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--footer-->
+    <stl:include file="@/include/footer.html"></stl:include>
+    <!--footer-->
+    <script type="text/javascript" src="{Stl.SiteUrl}/js/xh_roll.js"></script>
+    <script>
+        $(function () {
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                wrap: 'circular',
+                auto: 5
+            });
+        })
+    </script>
+</body>
+</html>

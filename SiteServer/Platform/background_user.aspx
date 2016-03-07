@@ -84,6 +84,7 @@
                 <td>最后活动时间</td>
                 <td>登录次数</td>
                 <td>积分</td>
+                <td>用户组</td>
                 <asp:Literal ID="ltlColumnHeader" runat="server" />
                 <td class="center" width="60">&nbsp;</td>
                 <td class="center" width="60">&nbsp;</td>
@@ -108,6 +109,8 @@
                             <asp:Literal ID="ltlLoginCount" runat="server"></asp:Literal></td>
                         <td>
                             <asp:Literal ID="ltlCredits" runat="server"></asp:Literal></td>
+                        <td>
+                            <asp:Literal ID="ltlNewGroupName" runat="server"></asp:Literal></td>
                         <asp:Literal ID="ltlColumns" runat="server" />
                         <td class="center">
                             <asp:HyperLink NavigateUrl="javascript:;" ID="hlChangePassword" Text="重设密码" runat="server"></asp:HyperLink>
@@ -126,7 +129,9 @@
 
         <ul class="breadcrumb breadcrumb-button">
             <asp:Button class="btn btn-success" ID="btnAdd" Text="添加用户" runat="server" />
-            <asp:Button class="btn" ID="AddToGroup" Text="设置用户组" runat="server" />
+            <asp:Button class="btn" ID="AddToGroup" Text="设置用户类别" runat="server" />
+            <asp:Button class="btn" ID="AddToNewGroup" Text="设置用户组" runat="server" />
+            <asp:Button class="btn" ID="SetMLibValidityDate" Text="设置投稿有效期" runat="server" />
             <asp:Button class="btn" ID="Lock" Text="锁定用户" runat="server" />
             <asp:Button class="btn" ID="UnLock" Text="解除锁定" runat="server" />
             <asp:Button class="btn" ID="SendMail" Text="发送邮件" runat="server" />

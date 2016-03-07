@@ -1,0 +1,18 @@
+<div class="head">
+    <div class="logo">
+        <a href="{Stl.SiteUrl}/">
+            {stl:value type="Logo" width="222px" height="40px"}
+        </a>
+        <span>创建世界一流高科技企业</span>
+    </div>
+    <div class="search">
+        <stl:searchwordinput searchwordurl="/utils/search.html" isrelated="true">
+                <input class="input1" placeholder="请输入关键词" type="text" name="word" onkeyup="{onkeyup}" />
+                <input class="ss" type="submit" value="搜索" onclick="document.getElementById('{formID}').submit();return false;" />
+                <ul id="relatedwordpanel_{formID}"></ul>
+                <script id="relatedwordtemplate_{formID}" type="text/html">
+                    <li><a style="cursor:pointer;" onmouseover="relatedwordSet(this);" onclick="relatedwordSearch(this);" value="{word}" target="_blank">{word} 大约{resultcount}个结果</a></li>
+                </script>
+        </stl:searchwordinput>
+    </div>
+</div>

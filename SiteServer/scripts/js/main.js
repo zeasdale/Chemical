@@ -9,6 +9,14 @@ function submitAjaxUrl(ajaxUrl, parameters) {
         if (data.isNext == 'true' && data.ajaxUrl) {
             submitAjaxUrl(data.ajaxUrl, data.parameters);
         }
+    }).error(function () {
+        $.post("/siteserver/stl/background_serviceStl.aspx", { type: "AjaxUrlFSONext" }, function (data) {
+            if (typeof (data) == "string")
+                data = eval('(' + data + ')');
+            if (data.isNext == 'true' && data.ajaxUrl) {
+                submitAjaxUrl(data.ajaxUrl, data.parameters);
+            }
+        });
     });
 }
 

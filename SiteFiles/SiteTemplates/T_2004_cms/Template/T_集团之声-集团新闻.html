@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>{Channel.Title}-{Stl.SiteName}</title>
+    <link rel="shortcut icon" href="{Stl.SiteUrl}/images/ico.ico" type="image/x-icon" />
+    <link href="{Stl.SiteUrl}/css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="{Stl.SiteUrl}/js/autowidth.js"></script>
+</head>
+<body>
+    <!--head-->
+    <stl:include file="@/include/header.html"></stl:include>
+    <!--head-->
+    <div id="main" class="zy tfzs">
+        <stl:include file="@/include/logo.html"></stl:include>
+        <div class="banner">
+            <img src="{Channel.ImageUrl}" width="1200" height="370" />
+            <div class="text">
+                <h2>{Channel.Title}</h2>
+                <p>{Channel.Content}</p>
+            </div>
+        </div>
+        <div id="content">
+            <div class="menuLeft">
+                <stl:a class="on"></stl:a>
+                <stl:a channelName="视频新闻" class="meiti"></stl:a>
+            </div>
+            <script>
+                $(function () {
+                    $(".menuLeft a[rel='32']").addClass("on");
+                    // 定制合作
+                });
+            </script>
+            <div class="conL1">
+                <h2 class="com1">{Channel.Title}</h2>
+                <div class="zy_search" style="display:none;">
+                    <form action="http://www.thtf.com.cn/plus/advancedsearch2.php" name="form1" id="form1" method="post">
+                        <input type="hidden" name="mid" value="26"><input type="hidden" name="dopost" value="search">
+                        <div class="xlc">
+                            <input class="input_xlc" name="riqi" placeholder="请选择时间">
+                            <ul>
+                                <li>2014</li>
+                                <li>2013</li>
+                                <li>2012</li>
+                                <li>2011</li>
+                                <li>2010</li>
+                                <li>2009</li>
+                                <li>2008</li>
+                                <li>2007</li>
+                                <li>2006</li>
+                            </ul>
+                        </div>
+                        <div class="xlc">
+                            <input class="input_xlc" name="lyfl" placeholder="请选择行业">
+                            <ul style="display: none;">
+                                <li>信息产业</li>
+                                <li>节能环保</li>
+                                <li>安防产业</li>
+                                <li>投资业务</li>
+                                <li>其它新闻</li>
+                            </ul>
+                        </div>
+                        <input class="input4" name="q" placeholder="请输入关键字">
+                        <a href="javascript:;" class="btn_com btn_ss2"></a>
+                    </form>
+                </div>
+                <!--***********-->
+                <stl:pagecontents pagenum="5" isImage="true" order="AddDate">
+                    <div class="tf_list">
+                        <stl:a><img class="pic" src="{Content.ImageUrl}" width="420" height="240"></stl:a>
+                        <div class="info">
+                            <h3><stl:a title="{Content.Title}"><stl:content type="Title" wordnum="22" ellipsis=""></stl:content></stl:a></h3>
+                            <p class="fc_999 line1"><stl:a class="fc_999"><stl:content type="AddDate" formatstring="yyyy年MM月dd日"></stl:content></stl:a></p>
+                            <p class="mb30"><stl:a><stl:content type="Summary" wordnum="45" ellipsis=""></stl:content></stl:a></p>
+                            <p class="more"><stl:a class="btn_more">更多 &gt;</stl:a></p>
+                        </div>
+                    </div>
+                </stl:pagecontents>
+                <!--***********-->
+                <div class="clear"></div>
+                <div class="page">
+                    <stl:pageitem type="FirstPage">
+                        <stl:successtemplate>
+                            <a href="{Current.Url}">&lt;&lt;首页</a>
+                        </stl:successtemplate>
+                        <stl:failuretemplate>
+                            <a href="javascript:void(0);">&lt;&lt;首页</a>
+                        </stl:failuretemplate>
+                    </stl:pageitem>
+                    <stl:pageitem type="PreviousPage">
+                        <stl:successtemplate>
+                            <a href="{Current.Url}">&lt;上一页</a>
+                        </stl:successtemplate>
+                        <stl:failuretemplate>
+                            <a href="javascript:void(0);">&lt;上一页</a>
+                        </stl:failuretemplate>
+                    </stl:pageitem>
+                    <stl:pageitem type="PageNavigation" listnum="9">
+                        <stl:successtemplate>
+                            <a href="{Current.Url}">{Current.Num}</a>
+                        </stl:successtemplate>
+                        <stl:failuretemplate>
+                            <a href="javascript:void(0);" class="on">{Current.Num}</a>
+                        </stl:failuretemplate>
+                    </stl:pageitem>
+                    <stl:pageitem type="NextPage">
+                        <stl:successtemplate>
+                            <a href="{Current.Url}">下一页&gt;</a>
+                        </stl:successtemplate><br>
+                        <stl:failuretemplate>
+                            <a href="javascript:void(0);">下一页&gt;</a>
+                        </stl:failuretemplate>
+                    </stl:pageitem>
+                    <stl:pageitem type="LastPage">
+                        <stl:successtemplate>
+                            <a href="{Current.Url}">尾页&gt;&gt;</a>
+                        </stl:successtemplate>
+                        <stl:failuretemplate>
+                            <a href="javascript:void(0);">尾页&gt;&gt;</a>
+                        </stl:failuretemplate>
+                    </stl:pageitem>
+                </div>
+            </div>
+            <div class="conR5 pt40">
+               <stl:a channelName="媒体预约"><img src="{Stl.SiteUrl}/images/mtyy.jpg" width="215" height="51"></stl:a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--footer-->
+    <stl:include file="@/include/footer.html"></stl:include>
+    <!--footer-->
+    <script type="text/javascript" src="{Stl.SiteUrl}/js/xh_roll.js"></script>
+    <script>
+        $(function () {
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                wrap: 'circular',
+                auto: 5
+            });
+        })
+    </script>
+</body>
+</html>

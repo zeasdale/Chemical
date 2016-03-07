@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>{Channel.Title}-{Stl.SiteName}</title>
+    <link rel="shortcut icon" href="{Stl.SiteUrl}/images/ico.ico" type="image/x-icon" />
+    <link href="{Stl.SiteUrl}/css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="{Stl.SiteUrl}/js/autowidth.js"></script>
+</head>
+<body>
+    <!--head-->
+    <stl:include file="@/include/header.html"></stl:include>
+    <!--head-->
+    <div id="main" class="zy xxcy">
+        <stl:include file="@/include/logo.html"></stl:include>
+        <div class="banner">
+            <img src="{Channel.ImageUrl}" width="1200" height="520">
+            <div class="text">
+                <h2>{Channel.Title}</h2>
+                <p>{Channel.Content}</p>
+            </div>
+        </div>
+        <div id="content">
+            <div class="info clearfix mb40">
+                <div class="fl tab_area">
+                    <div class="tab_tit tab_tit3">
+                        <ul>
+                            <stl:channels toplevel="1">
+                                <stl:if testtype="UpChannelOrSelf">
+                                    <stl:successtemplate>
+                                        <li class="on"><stl:a></stl:a></li>
+                                    </stl:successtemplate>
+                                    <stl:failuretemplate>
+                                        <li><stl:a></stl:a></li>
+                                    </stl:failuretemplate>
+                                </stl:if>
+                            </stl:channels>
+                        </ul>
+                    </div>
+                    <div class="tab_con">
+                        <stl:channels toplevel="1">
+                            <stl:if testtype="UpChannelOrSelf">
+                                <stl:successtemplate>
+                                    <div class="con"><p>{Channel.Content}</p></div>
+                                </stl:successtemplate>
+                                <stl:failuretemplate>
+                                    <div class="con" style="display:none;"><p>{Channel.Content}</p></div>
+                                </stl:failuretemplate>
+                            </stl:if>
+                        </stl:channels>
+                    </div>
+                </div>
+                <stl:a toplevel="1" class="fr btn_com btn_bb2">返回栏目首页 &gt;</stl:a>
+            </div>
+            <div class="picarea3">
+                <stl:contents isimage="true">
+                    <div class="con contentCss">
+                        <div class="pic">
+                            <p><stl:a><img src="{Content.ImageUrl}" width="372" height="414"></stl:a></p>
+                            <div class="bg"></div>
+                            <div class="text">
+                                <h3><stl:a><stl:content type="Title" wordnum="12"></stl:content></stl:a></h3>
+                                <p class="zw"><stl:a><stl:content type="Summary" wordnum="40"></stl:content></stl:a></p>
+                            </div>
+                            <p class="more"><stl:a>更多 &gt;</stl:a></p>
+                        </div>
+                    </div>
+                </stl:contents>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <stl:include file="@/include/footer.html"></stl:include>
+    <!--footer-->
+    <script type="text/javascript" src="{Stl.SiteUrl}/js/xh_roll.js"></script>
+    <script>
+        $(function () {
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                wrap: 'circular',
+                auto: 5
+            });
+        })
+    </script>
+    <script>
+        var con = $(".contentCss");
+        for (var i = 2; i < con.length; i += 3) {
+            con.eq(i).addClass("last");
+        }
+    </script>
+</body>
+</html>

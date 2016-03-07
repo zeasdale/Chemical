@@ -87,7 +87,21 @@
                     <asp:Literal ID="ltlTopApps" runat="server" />
 
                     <li>
-                        <a href="logout.aspx?t=<%=t%>" target="_self" title="退出系统"><i class="icon-signout"></i></a>
+                        <form action="logout.aspx" method="post" target="_self">
+                            <input type="hidden" value="<%=t%>" name="t" />
+                            <a href="javascript:;" title="退出系统" onclick="$(this).parent().submit();"><i class="icon-signout"></i></a>
+                            <style>
+                                .icon-nav li > form {
+                                    display: inline;
+                                }                        
+                                .icon-nav li > form > a {
+                                    padding:11px 10px 9px 10px;display:block;color:#fff;position:relative;
+                                }
+                                .icon-nav li > form > a:hover {
+                                    background:#1b67af;text-decoration:none;
+                                }
+                            </style>
+                        </form>
                     </li>
 
                 </ul>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>{Channel.Title}-{Stl.SiteName}</title>
+    <link rel="shortcut icon" href="{Stl.SiteUtl}/images/ico.ico" type="image/x-icon" />
+    <link href="{Stl.SiteUrl}/css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="{Stl.SiteUrl}/js/autowidth.js"></script>
+</head>
+<body>
+    <!--head-->
+    <stl:include file="@/include/header.html"></stl:include>
+    <!--head-->
+    <div id="main" class="zy gytf gytf4">
+        <stl:include file="@/include/logo.html"></stl:include>
+        <div class="banner">
+            <img src="{Channel.ImageUrl}" width="1200" height="370">
+            <div class="text">
+                <h2>{Channel.Title}</h2>
+                <p>{Channel.Content}</p>
+            </div>
+        </div>
+        <div id="content">
+            <!--left-->
+            <div class="menuLeft">
+                <stl:channels toplevel="1">
+                    <stl:if testtype="UpChannelOrSelf">
+                        <stl:successtemplate>
+                            <stl:a class="on"></stl:a>
+                        </stl:successtemplate>
+                        <stl:failuretemplate>
+                            <stl:a></stl:a>
+                        </stl:failuretemplate>
+                    </stl:if>
+                </stl:channels>
+            </div>
+            <!--left-->
+            <div class="conRight">
+                <h2>发展路径</h2>
+                <div class="tab_tit">
+                    <ul>
+                        <li class="on">
+                            <p class="tit1">技术与资本</p>
+                            <p class="tit2">1997 - 2001</p>
+                        </li>
+                        <li class="">
+                            <p class="tit1">合作与发展</p>
+                            <p class="tit2">2002 - 2006</p>
+                        </li>
+                        <li class="last">
+                            <p class="tit1">品牌化与国际化</p>
+                            <p class="tit2">2007 - 2011</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab_con">
+                    <div class="con" style="display: block;">
+                        <stl:contents channelname="技术与资本" isimage="true">
+                            <stl:itemtemplate type="Item">
+                                <div class="partL">
+                                    <img src="{Content.ImageUrl}" width="320" height="220">
+                                    <div style="width:640px;float:left">
+                                        <h2><stl:content type="Title"></stl:content></h2>
+                                        <p></p><p><stl:content type="Summary" wordnum="200" ellipsis=""></stl:content></p>
+                                        <p>&nbsp;</p><p></p>
+                                    </div>
+                                </div>
+                            </stl:itemtemplate>
+                            <stl:itemtemplate type="AlternatingItem">
+                                <div class="partR">
+                                    <img src="{Content.ImageUrl}" width="320" height="220">
+                                    <div style="width:640px;float:left">
+                                        <h2><stl:content type="Title"></stl:content></h2>
+                                        <p></p><p><stl:content type="Summary" wordnum="200"></stl:content></p><p></p>
+                                    </div>
+                                </div>
+                            </stl:itemtemplate>
+                        </stl:contents>
+                    </div>
+                    <div class="con" style="display: none;">
+                        <stl:contents channelname="合作与发展" isimage="true">
+                            <stl:itemtemplate type="Item">
+                                <div class="partL">
+                                    <img src="{Content.ImageUrl}" width="320" height="220">
+                                    <div style="width:640px;float:left">
+                                        <h2><stl:content type="Title"></stl:content></h2>
+                                        <p></p><p><stl:content type="Summary" wordnum="200" ellipsis=""></stl:content></p>
+                                        <p>&nbsp;</p><p></p>
+                                    </div>
+                                </div>
+                            </stl:itemtemplate>
+                            <stl:itemtemplate type="AlternatingItem">
+                                <div class="partR">
+                                    <img src="{Content.ImageUrl}" width="320" height="220">
+                                    <div style="width:640px;float:left">
+                                        <h2><stl:content type="Title"></stl:content></h2>
+                                        <p></p><p><stl:content type="Summary" wordnum="200"></stl:content></p><p></p>
+                                    </div>
+                                </div>
+                            </stl:itemtemplate>
+                        </stl:contents>
+                    </div>
+                    <div class="con" style="display: none;">
+                        <stl:contents channelname="品牌化与国际化" isimage="true">
+                            <stl:itemtemplate type="Item">
+                                <div class="partL">
+                                    <img src="{Content.ImageUrl}" width="320" height="220">
+                                    <div style="width:640px;float:left">
+                                        <h2><stl:content type="Title"></stl:content></h2>
+                                        <p></p><p><stl:content type="Summary" wordnum="200" ellipsis=""></stl:content></p>
+                                        <p>&nbsp;</p><p></p>
+                                    </div>
+                                </div>
+                            </stl:itemtemplate>
+                            <stl:itemtemplate type="AlternatingItem">
+                                <div class="partR">
+                                    <img src="{Content.ImageUrl}" width="320" height="220">
+                                    <div style="width:640px;float:left">
+                                        <h2><stl:content type="Title"></stl:content></h2>
+                                        <p></p><p><stl:content type="Summary" wordnum="200"></stl:content></p><p></p>
+                                    </div>
+                                </div>
+                            </stl:itemtemplate>
+                        </stl:contents>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--footer-->
+    <stl:include file="@/include/footer.html"></stl:include>
+    <!--footer-->
+    <script type="text/javascript" src="{Stl.SiteUrl}/js/xh_roll.js"></script>
+    <script>
+        $(function () {
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                wrap: 'circular',
+                auto: 5
+            });
+        })
+    </script>
+</body>
+</html>

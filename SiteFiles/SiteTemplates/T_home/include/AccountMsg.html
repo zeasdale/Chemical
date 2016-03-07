@@ -1,0 +1,35 @@
+<div class="mcL mcLx1">
+ <ul id="accountMsgUrl">
+  <stl:channels channelname="消息中心">
+   <stl:if testtype="UpChannelOrSelf">
+                <stl:successtemplate>
+                    <li>
+                        <stl:a class="m2menu_a m2menu_cuta">
+                            <img class="block" src="{channel.imageurl}" width="35" height="35" />
+                            <img class="hidden" src="{channel.imageurl}" width="35" height="35" />{Channel.Title}
+                        </stl:a>
+                    </li>
+                </stl:successtemplate>
+                <stl:failuretemplate>
+                    <li>
+                        <stl:a class="m2menu_a">
+                            <img class="block" src="{channel.imageurl}" width="35" height="35" />
+                            <img class="hidden" src="{channel.imageurl}" width="35" height="35" />{Channel.Title}
+                        </stl:a>
+                    </li>
+                </stl:failuretemplate>
+            </stl:if>
+  </stl:channels>
+  </ul>
+</div>
+<script>
+        function getUrlVar(key) {
+           var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search);
+           return result && decodeURIComponent(result[1]) || "";
+       }
+       var returnUrl = getUrlVar("returnUrl");
+       if(returnUrl.indexOf("userMessage.html") >= 0)
+          $("#accountMsgUrl").find("a").eq(0).addClass("m2menu_cuta");
+       else if(returnUrl.indexOf("userMessageNotice.html") >= 0)
+          $("#accountMsgUrl").find("a").eq(1).addClass("m2menu_cuta");
+</script>

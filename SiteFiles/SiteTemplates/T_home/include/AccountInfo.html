@@ -1,0 +1,33 @@
+<div class="mcL mcLx1">
+ <ul id="accountHelpUrl">
+  <stl:channels channelname="账号信息">
+   <stl:if testtype="UpChannelOrSelf">
+                <stl:successtemplate>
+                    <li>
+                        <stl:a class="m2menu_a m2menu_cuta">
+                            <img class="block" src="{channel.imageurl}" width="35" height="35" />
+                            <img class="hidden" src="{channel.imageurl}" width="35" height="35" />{Channel.Title}
+                        </stl:a>
+                    </li>
+                </stl:successtemplate>
+                <stl:failuretemplate>
+                    <li>
+                        <stl:a class="m2menu_a">
+                            <img class="block" src="{channel.imageurl}" width="35" height="35" />
+                            <img class="hidden" src="{channel.imageurl}" width="35" height="35" />{Channel.Title}
+                        </stl:a>
+                    </li>
+                </stl:failuretemplate>
+            </stl:if>
+  </stl:channels>
+  </ul>
+</div>
+
+<!--<div class="mcL mcLx1">
+ <ul id="accountInfoUrl">
+<li><a href="{Stl.SiteUrl}/mypic.html" class="m2menu_a"><img class="block" src="{Stl.SiteUrl}/images/ml_ico1.png" width="35" height="35" /><img class="hidden" src="{Stl.SiteUrl}/images/ml_ico1a.png" width="35" height="35" />我的头像</a></li>
+  <li><a href="{Stl.SiteUrl}/info.html" class="m2menu_a"><img class="block" src="{Stl.SiteUrl}/images/ml_ico2.png" width="35" height="35" /><img class="hidden" src="{Stl.SiteUrl}/images/ml_ico2a.png" width="35" height="35" />基本资料</a></li>
+  <li><a href="{Stl.SiteUrl}/detail.html" class="m2menu_a"><img class="block" src="{Stl.SiteUrl}/images/ml_ico3.png" width="35" height="35" /><img class="hidden" src="{Stl.SiteUrl}/images/ml_ico3a.png" width="35" height="35" />详细资料</a></li>
+  <li><a href="{Stl.SiteUrl}/accountBind.html" class="m2menu_a"><img class="block" src="{Stl.SiteUrl}/images/ml_ico4.png" width="35" height="35" /><img class="hidden" src="{Stl.SiteUrl}/images/ml_ico4a.png" width="35" height="35" />帐号绑定</a></li>
+ </ul>
+</div>-->

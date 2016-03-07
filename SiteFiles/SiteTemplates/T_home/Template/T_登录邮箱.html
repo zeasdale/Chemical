@@ -1,0 +1,61 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>{Stl.SiteName}</title>
+  <meta name="keywords" content="{stl:value type="META_KEYWORDS"}" />
+  <meta name="description" content="{stl:value type="META_DESCRIPTION"}" />
+  <link href="{Stl.SiteUrl}/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  
+  
+  <stl:include file="/include/head.html"></stl:include> 
+  
+  <div class="mcon"> 
+    <stl:include file="/include/AccountSafe.html"></stl:include> 
+    <div class="mcR mcRx2"> 
+      <div class="m3bd_top">
+        <div class="m3bd_st1">登录邮箱</div>
+        <div class="m3hd_ss1" id="divNoBindEmail">您还没有设置登录邮箱 &nbsp; <a class="m3hd_a1" href="javascript:;" id="btnSetEmail">现在设置</a></div>
+        <div class="m3hd_ss1" id="divBindEmail"><span class="m3hd_tel" id="spanUserBindEmail"></span> &nbsp; <a class="m3hd_a1" href="javascript:;" id="btnUpdateEmail">修改</a></div>
+        登录邮箱可以用来登录您的帐号与找回密码
+      </div>
+      <div class="m3hd_bom">
+        <strong class="f14">登录邮箱常见问题</strong>
+        <stl:Dynamic>
+          <stl:pageContents channelname="登录邮箱常见问题" pageNum="10">
+            <dd>
+              <stl:a>
+                <p><strong>·</strong> <stl:a target="_blank">{Content.Title}</stl:a></p>
+              </stl:a>
+            </dd>
+          </stl:pageContents>
+        </stl:Dynamic>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <!--修改密码弹出层 开始-->
+  <div class="mlayBg hide"></div>
+  <div class="mlay hide">
+    <div class="mlay_t"><span class="fl">绑定邮箱</span><img class="mrclose" src="{Stl.SiteUrl}/images/m2close.jpg" width="31" height="26" /></div>
+    <div class="mlay_ul">
+      <div class="nmlay_alr2">我们会向您的邮箱发送一封验证码，请注意查收。</div>
+      <ul>
+        <li><span class="mlay_s1">邮箱</span><input class="mlay_int" placeholder="请输入新邮箱" id="txtSendEmail" name="txtSendEmail" type="text" /><a href="#" style="margin-right:30px;" id="btnSendEmail"class="mLayOk_btn2">发送</a></li>
+        <li><span class="mlay_s1">校验码</span><input class="mlay_int mlay_int2" placeholder="请输入6位校验码" id="txtValidateCode" name="txtValidateCode" type="text" /></li>
+        <li><span class="mlay_s1">&nbsp;</span><button type="button" id="btnSubmitEmail" class="pubBtn mlay_btn"><span>提交</span></button></li>
+      </ul>
+    </div>
+  </div>
+  <div class="mLayOk hide">
+    <span class="mLayOk_s1"><img src="{Stl.SiteUrl}/images/nm_ico1.jpg" /><span style="top:0px;" id="spanTipsMessage"></span></span>
+    <span class="mLayOk_s2"></span>
+    <span class="mLayOk_s3"><a href="javascript:;" id="btnCloseTips" class="mLayOk_btn2">关闭</a></span>
+  </div>
+  <stl:include file="/include/footer.html"></stl:include>
+</body>
+</html>
+<script src="{Stl.SiteUrl}/js/lib.js"></script>
+<script src="{Stl.SiteUrl}/js/app.js" id="controllerName" data-controller-name="loginEmail"></script> 

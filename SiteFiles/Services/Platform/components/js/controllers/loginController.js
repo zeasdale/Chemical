@@ -72,6 +72,18 @@ loginController.render = function () {
 };
 
 loginController.load = function () {
+    userService.getUser(function (data) {
+        if (data.isAnonymous == false) {
+            $("#divCurrent").show();
+            $("#currentImg").attr("src", data.user.avatarMiddle);
+            $("#currentUser").text(data.user.userName);
+        }
+        else {
+            $("#divLogin").show();
+        }
+    });
+
+
     userService.getThirdLoginTypeParameter(function (data) {
         //alert(data.isSucess);
         if (data.isSucess == true) {

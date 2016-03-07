@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<title>{Channel.Title}-{Stl.SiteName}</title>
+<link rel="stylesheet" type="text/css" href="{Stl.SiteUrl}/css/base.css" />
+<link rel="stylesheet" type="text/css" href="{Stl.SiteUrl}/css/style.css" />
+<link rel="shortcut icon" href="{Stl.SiteUrl}/images/ico.ico" type="image/x-icon" /> 
+<link href="{Stl.SiteUrl}/css/lanrenzhijia.css" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{Stl.SiteUrl}/js/jquery-1.8.2.js"></script>
+<script src="{Stl.SiteUrl}/js/jquery-latest.min.js" type="text/javascript"></script>
+<script src="{Stl.SiteUrl}/js/lanrenzhijia.js" type="text/javascript"></script> 
+<script type="text/javascript" src="{Stl.SiteUrl}/js/jquery-juren-slidepattern.js"></script>
+<script type="text/javascript" src="{Stl.SiteUrl}/js/jquery.touchSlider.js"></script>
+<script type="text/javascript" src="{Stl.SiteUrl}/js/base.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $(this).dwseeTopBottomMenu();
+   $("#dstbm-top").css("background-image","url(/PE15001/images/up_arrow.png)");
+   $("#dstbm-menu").css("background-image","url(/PE15001/images/menu_icon.png)");
+   $("#dstbm-bottom").css("background-image","url(/PE15001/images/down_arrow.png)");  
+})
+</script>
+</head>
+
+<body onmousewheel="top.document.documentElement.scrollTop-=event.wheelDelta">
+<stl:include file="/include/header.html"></stl:include>
+<!--banner-->
+<div class="banner" id="centerbanner">
+    <div class="col clearfix pt55">
+    <stl:contents totalNum="1" isRecommend="true" topLevel="1" isImage="true" order="AddDate">
+        <div class="bnL">
+            <h2>
+                <div><span style="font-family:'Microsoft YaHei';font-size:x-large;FONT-WEIGHT: bold">
+                <stl:content type="Title" wordNum="17" ellipsis="..."></stl:content></span></div>
+            </h2>
+            <p></p>
+            <p style="padding-bottom: 8px; padding-left: 0px; padding-right: 0px; padding-top: 8px">
+                    <span style="color: rgb(169,169,169)"><stl:content type="Summary" wordNum="105" ellipsis="..."></stl:content></span>
+            </p>
+        </div>
+        <div class="bnR" style="max-width: 220px; max-height: 150px">
+            <div class="pic">
+                <img src="{Content.ImageUrl}" style="max-width: 220px; max-height: 150px">
+            </div>
+            <h3>
+                        
+            </h3>
+        </div>
+    </stl:contents>
+    </div>
+</div>
+
+<div class="subnav_cont" id="mentreelist">
+    <div class="col subnav">
+        <span class="invest"> {Channel.top1.Title} </span>
+        <ul class="navul" id="nvaulid">
+            <!--nvaulidTabBTN是选项卡切换按钮-->
+          <stl:channels channelName="{Channel.top1.Title}">
+            <stl:if testType="UpChannelOrSelf">
+            <stl:successTemplate>
+            <li class="nvaulidTabBTN current">
+                <stl:a>{Channel.Title}</stl:a>
+                <span class="fr"></span>
+                <div class="nvaulidTabBTNDown bottom"></div>
+            </li>
+            </stl:successTemplate>
+            <stl:failureTemplate>
+            <li class="nvaulidTabBTN">
+                <stl:a>{Channel.Title}</stl:a>
+                <span class="fr"></span>
+                <div class="nvaulidTabBTNDown"></div>
+            </li>
+            </stl:failureTemplate>
+            </stl:if>
+          </stl:channels>        
+        </ul>
+    </div>
+</div> 
+
+<div class="main">
+  
+  <!--资质荣誉-->
+  <div class="col culture clearfix">
+        <div class="course bgfff">
+          <div class="courseul clear">
+            <ul class="demo clearfix">
+                        <stl:channels topLevel="2">
+                          <stl:if testType="UpChannelOrSelf">
+                                <stl:successTemplate>
+                                    <li class="yearsTabBtn2 on"><stl:a>{Channel.Title}</stl:a></li>
+                                </stl:successTemplate>
+                                <stl:failureTemplate>
+                                  <li class="yearsTabBtn2"><stl:a>{Channel.Title}</stl:a></li>
+                                </stl:failureTemplate>
+                            </stl:if>
+                        </stl:channels>              
+            </ul>
+          </div>
+          <div class="yearsTabDivBox">
+                        <ul type="square" class="yearsTabDiv2 on">
+                        <stl:contents>
+              <li style="margin-left: 15px;margin-top:5px;">*  <stl:content type="Title" wordNum="55" ellipsis=""></stl:content></li>
+                        </stl:contents>
+            </ul>
+                      
+                    </div>
+      </div>
+    </div>
+  
+</div>
+<stl:include file="/include/footer.html"></stl:include>
+</body>
+</html>
+

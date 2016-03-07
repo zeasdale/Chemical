@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{Stl.SiteName}</title>
+    <meta name="keywords" content="{stl:value type='meta_keywords'}" />
+    <meta name="description" content="{stl:value type='meta_description'}" />
+    <link href="{Stl.SiteUrl}/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <stl:include file="/include/head.html"></stl:include>
+    <div class="mcon">
+        <stl:include file="/include/AccountHelp.html"></stl:include>
+        <div class="mcR mcRx2">
+            <div class="mc4_dl">
+                <dl>
+                    <dt>{Channel.Title}</dt>
+                    <stl:dynamic>
+                        <stl:contents>
+                            <dd><stl:a></stl:a></dd>
+                        </stl:contents>
+                    </stl:dynamic>
+                </dl>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <stl:include file="/include/footer.html"></stl:include>
+</body>
+</html>
+<script src="{Stl.SiteUrl}/js/lib.js"></script>
+<script src="{stl.siteurl}/js/app.js" id="controllerName" data-controller-name="helpCenter"></script>

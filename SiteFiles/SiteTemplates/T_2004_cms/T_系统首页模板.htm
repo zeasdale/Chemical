@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>{Stl.SiteName}</title>
+    <link rel="shortcut icon" href="{Stl.SiteUrl}/images/ico.ico" type="image/x-icon" />
+    <link href="{Stl.SiteUrl}/css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="{Stl.SiteUrl}/js/autowidth.js"></script>
+</head>
+<body>
+    <!--head-->
+    <stl:include file="@/include/header.html"></stl:include>
+    <!--head-->
+    <div id="main" class="index">
+        <stl:include file="@/include/logo.html"></stl:include>
+        <div class="banner">
+            <div id="rolldiv">
+                <div class=" jcarousel-skin-tango">
+                    <div class="jcarousel-container jcarousel-container-horizontal" style="position: relative; display: block;">
+                        <div class="jcarousel-clip jcarousel-clip-horizontal" style="position: relative;">
+                            <ul id="mycarousel" class="jcarousel-list jcarousel-list-horizontal" style="overflow: hidden; position: relative; top: 0px; margin: 0px; padding: 0px; left: -6000px; width: 8500px;">
+                                <stl:contents channelname="首页轮播图" isimage="true">
+                                    <li class="jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal" jcarouselindex="{Content.ItemIndex}" style="float: left; list-style: none;">
+                                        <p><img src="{Content.ImageUrl}" width="1200" height="500" border="0"></p>
+                                        <div class="bg"></div>
+                                        <div class="tit"><stl:a target="_blank"></stl:a></div>
+                                    </li>
+                                </stl:contents>
+                            </ul>
+                        </div>
+                        <div class="jcarousel-prev jcarousel-prev-horizontal" style="display: block;"></div>
+                        <div class="jcarousel-next jcarousel-next-horizontal" style="display: block;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="part1 clearfix">
+            <div class="fl">
+                <h2>关于集团</h2>
+                <div class="content">
+                    <p class="con1 f18 f_blue line1">
+                        <stl:contents channelname="关于集团" totalnum="1">
+                            <a href="{Channel.NavigationUrl}">{Content.Title}</a>
+                        </stl:contents>
+                    </p>
+                    <p class="con2">
+                        <stl:contents channelname="关于集团" startnum="2" totalnum="1">
+                            <a href="{Channel.NavigationUrl}">{Content.Title}</a>
+                        </stl:contents>
+                    </p>
+                </div>
+                <div class="more"><stl:a channelname="关于集团" class="btn_more">更多 &gt;</stl:a></div>
+            </div>
+            <div class="fr">
+                <h2>集团之声</h2>
+                <div class="content">
+                    <p class="con1 line1">
+                        <stl:contents channelname="集团新闻" ishot="true" totalnum="1">
+                            <stl:if testtype="Summary" testoperate="NotEmpty">
+                                <stl:successtemplate>
+                                    <stl:a><stl:content type="Summary" wordnum="85"></stl:content></stl:a>
+                                </stl:successtemplate>
+                                <stl:failuretemplate>
+                                    <stl:a><stl:content type="Content" iscleartags="true" wordnum="85"></stl:content></stl:a>
+                                </stl:failuretemplate>
+                            </stl:if>
+                            <stl:a>[查看更多]</stl:a>
+                        </stl:contents>
+                    </p>
+                    <p class="con1 line1">
+                        <stl:contents channelname="集团新闻" istop="true" totalnum="1">
+                            <stl:if testtype="Summary" testoperate="NotEmpty">
+                                <stl:successtemplate>
+                                    <stl:a><stl:content type="Summary" wordnum="85"></stl:content></stl:a>
+                                </stl:successtemplate>
+                                <stl:failuretemplate>
+                                    <stl:a><stl:content type="Content" iscleartags="true" wordnum="85"></stl:content></stl:a>
+                                </stl:failuretemplate>
+                            </stl:if>
+                            <stl:a>[查看更多]</stl:a>
+                        </stl:contents>
+                    </p>
+                </div>
+                <div class="more"><stl:a channelname="集团新闻" class="btn_more">更多 &gt;</stl:a></div>
+            </div>
+        </div>
+        <div class="part2 clearfix">
+            <stl:contents channelname="首页三列表" isimage="true" totalnum="3">
+                <stl:if testtype="ItemIndex" testoperate="Equals" testvalue="3">
+                    <stl:successtemplate>
+                        <div class="fr con{Content.ItemIndex}">
+                            <stl:a class="pic">
+                                <img src="{Content.ImageUrl}" width="380" height="220">
+                                <span class="bg" style="display: inline;"></span>
+                            </stl:a>
+                            <h3><stl:a></stl:a></h3>
+                            <p class="info"><a href="javascript:;"></a></p>
+                            <p class="more"><stl:a class="btn_more">更多 &gt;</stl:a></p>
+                        </div>
+                    </stl:successtemplate>
+                    <stl:failuretemplate>
+                        <div class="fl con{Content.ItemIndex}">
+                            <stl:a class="pic">
+                                <img src="{Content.ImageUrl}" width="380" height="220">
+                                <span class="bg" style="display: inline;"></span>
+                            </stl:a>
+                            <h3><stl:a></stl:a></h3>
+                            <p class="info"><a href="javascript:;"></a></p>
+                            <p class="more"><stl:a class="btn_more">更多 &gt;</stl:a></p>
+                        </div>
+                    </stl:failuretemplate>
+                </stl:if>
+            </stl:contents>
+        </div>
+    </div>
+    <!--footer-->
+    <stl:include file="@/include/footer.html"></stl:include>
+    <!--footer-->
+    <script type="text/javascript" src="{Stl.SiteUrl}/js/xh_roll.js"></script>
+    <script>
+        $(function(){
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                wrap: 'circular',
+                auto:5
+            });
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>{Content.Title}-{Channel.Title}-{Stl.SiteName}</title>
+    <link rel="shortcut icon" href="{Stl.SiteUrl}/images/ico.ico" type="image/x-icon" />
+    <link href="{Stl.SiteUrl}/css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="{Stl.SiteUrl}/js/autowidth.js"></script>
+    <style>
+        .textarea1, .input2 {
+            color: #000 !important;
+        }
+    </style>
+</head>
+<body>
+    <!--head-->
+    <stl:include file="@/include/header.html"></stl:include>
+    <!--head-->
+    <div id="main" class="zy gddd show">
+        <stl:include file="@/include/logo.html"></stl:include>
+        <div class="banner">
+            <img src="{Channel.ImageUrl}" width="1200" height="370">
+            <div class="text">
+                <h2>{Channel.Title}</h2>
+                <p>{Channel.Content}</p>
+            </div>
+        </div>
+        <div id="content">
+            <div class="conL1">
+                <h1>{Content.Title}</h1>
+                <div class="bread">
+                    新闻分类：
+                    <span class="type"><a href="{Channel.NavigationUrl}">{Channel.Title}</a></span>
+                    <span class="date ml20">发布日期：<stl:content type="AddDate" formatstring="yyyy/MM/dd"></stl:content></span>
+                </div>
+                <div class="show_con my_show_con">
+                    <!--内容-->
+                    <stl:content type="Content"></stl:content>
+                    <!--内容结束-->
+                </div>
+                <div style="float:left;background:#0066FF;padding:5px 15px">
+                    <a style="color:#fff" href="{Content.FileUrl}" target="_blank">下载PDF文件</a>
+                </div>
+                <div class="fx">
+                    <a href="http://www.jiathis.com/share" class="btn_com btn_fx jiathis jiathis_txt jiathis_separator jtico jtico_jiathis">分享到</a>
+                    <a href="javascript:window.print();" class="btn_com btn_dy">打印此页</a>
+                </div>
+                <div class="pernext">
+                    <p><stl:navigation type="PreviousContent" tiptext="上一条：" emptytext="无"></stl:navigation></p>
+                    <p><stl:navigation type="NextContent" tiptext="下一条：" emptytext="无"></stl:navigation></p>
+                </div>
+                <p class="more"><a href="{Channel.NavigationUrl}" class="btn_more">返回列表 &gt;</a></p>
+            </div>
+            <div class="conR6">
+                <!--right-->
+                ﻿      <div class="part3 mb30">
+                    <h3 class="com1">股市行情</h3>
+                    <div class="con">
+                        <stl:a channelname="股市行情"><img src="{Channel.ImageUrl}" width="296" height="162"></stl:a>
+                    </div>
+                </div>
+                <div class="part5 mb30">
+                    <h3 class="com1">在线留言</h3>
+                    <div class="content">
+                        <stl:wsmessage>
+                            <input type="hidden" name="action" value="post">
+                            <input type="hidden" name="diyid" value="1">
+                            <input type="hidden" name="do" value="2">
+                            <ul>
+                                <li class="content_message_li">
+                                    <span class="content_message_liSpan1">姓名：</span>
+                                    <span><input id="name" name="name" class="input2" placeholder="请填写您的姓名"></span>
+                                </li>
+                                <li class="content_message_li">
+                                    <span class="content_message_liSpan1">电话：</span>
+                                    <span><input id="phone" name="phone" class="input2" placeholder="请填写您的电话"></span>
+                                </li>
+                                <li class="content_message_li">
+                                    <span class="content_message_liSpan1">邮箱：</span>
+                                    <span><input id="email" name="email" class="input2" placeholder="请填写您的真实邮箱，以便回复"></span>
+                                </li>
+                                <li class="content_message_li">
+                                    <span class="content_message_liSpan1">疑问：</span>
+                                    <span><input id="question" name="question" class="input2" placeholder="请填写留言疑问"></span>
+                                </li>
+                                <li class="content_message_li">
+                                    <span class="content_message_liSpan1">描述：</span>
+                                    <span>
+                                        <textarea id="description" name="description" cols="" rows="" class="textarea1" placeholder="请填写留言疑问"></textarea>
+                                    </span>
+                                </li>
+                                <li class="content_message_li">
+                                    <span class="content_message_liSpan1">&nbsp;</span>
+                                    <span>
+                                        <input type="submit" id="submit" class="btn_com btn_bb1" value="发送留言" style="cursor:pointer;" />
+                                    </span>
+                                </li>
+                            </ul>
+                        </stl:wsmessage>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--footer-->
+    <stl:include file="@/include/footer.html"></stl:include>
+    <!--footer-->
+    <script type="text/javascript" src="{stl.SiteUrl}/js/xh_roll.js"></script>
+    <script>
+        $(function () {
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                wrap: 'circular',
+                auto: 5
+            });
+        })
+    </script>
+</body>
+</html>

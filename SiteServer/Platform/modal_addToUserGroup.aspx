@@ -17,7 +17,7 @@
 
   <table class="table table-noborder table-hover">
     <tr>
-      <td width="100">用户组名称：</td>
+      <td width="100">用户类别名称：</td>
       <td><asp:DropDownList ID="UserGroupIDDropDownList" runat="server"/></td>
     </tr>
   </table>

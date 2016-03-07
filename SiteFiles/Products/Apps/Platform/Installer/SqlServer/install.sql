@@ -580,6 +580,9 @@ CREATE TABLE bairong_Users(
     Department          nvarchar(50)     DEFAULT '' NOT NULL,
     Position            nvarchar(50)     DEFAULT '' NOT NULL,
     Address             nvarchar(255)    DEFAULT '' NOT NULL,
+    NewGroupID          int              DEFAULT 0 NOT NULL,
+    MLibNum             int              DEFAULT 0 NOT NULL,
+    MLibValidityDate    datetime         DEFAULT '1754-1-1 0:0:0:0' NOT NULL,
     CONSTRAINT PK_bairong_Users PRIMARY KEY NONCLUSTERED (UserID)
 )
 go
@@ -1097,4 +1100,91 @@ INSERT INTO [dbo].[bairong_TableMetadata]([AuxiliaryTableENName],[AttributeName]
      
 GO
 
+
+
+----新用户组表
+CREATE TABLE bairong_UserNewGroup(
+ItemID                 int             IDENTITY(1,1),
+ItemName               nvarchar(50)    DEFAULT '' NOT NULL,
+ItemIndexName          nvarchar(50)    DEFAULT '' NOT NULL,
+ParentID               int             DEFAULT 0 NOT NULL,
+ParentsPath            varchar(255)    DEFAULT '' NOT NULL,
+ParentsCount           int             DEFAULT 0 NOT NULL,
+ChildrenCount          int             DEFAULT 0 NOT NULL,
+ContentNum             int             DEFAULT 0 NOT NULL,
+ClassifyID             int             DEFAULT 0 NOT NULL, 
+GroupType              varchar(18)     DEFAULT '' NOT NULL,
+Enabled                varchar(18)     DEFAULT '' NOT NULL,
+IsLastItem             varchar(18)     DEFAULT '' NOT NULL,
+Taxis                  int             DEFAULT 0 NOT NULL,
+AddDate                datetime        DEFAULT getdate() NOT NULL,
+UserName               nvarchar(50)    DEFAULT '' NOT NULL,
+Description            nvarchar(500)   DEFAULT '' NOT NULL,
+SetXML                 ntext           DEFAULT '' NOT NULL,
+CONSTRAINT PK_bairong_UserNewGroup PRIMARY KEY NONCLUSTERED (ItemID)
+)
+GO
+IF NOT EXISTS(SELECT * FROM SYS.INDEXES WHERE NAME = 'IX_bairong_UserNewGroup_Taxis')
+CREATE CLUSTERED INDEX IX_bairong_UserNewGroup_Taxis ON bairong_UserNewGroup(Taxis)
+GO
+
+----投稿范围表
+CREATE TABLE bairong_MLibScope(
+    PublishmentSystemID       int             DEFAULT 0 NOT NULL,
+    NodeID                    int             DEFAULT 0 NOT NULL,
+    ContentNum                int             DEFAULT 0 NOT NULL,
+    IsChecked                 varchar(18)     DEFAULT '' NOT NULL,
+    Field                     varchar(500)    DEFAULT '' NOT NULL,
+    AddDate                   datetime        DEFAULT getdate() NOT NULL,
+    UserName                  varchar(500)    DEFAULT '' NOT NULL,
+    SetXML                    ntext           DEFAULT '' NOT NULL  
+)
+GO
+
+
+----投稿草稿表 
+CREATE TABLE  bairong_MLibDraftContent(
+	 ID                          int            IDENTITY(1,1),
+	 NodeID                      int            DEFAULT 0 NOT NULL,
+	 PublishmentSystemID         int            DEFAULT 0 NOT NULL,
+	 AddUserName                 nvarchar(255)  DEFAULT '' NOT NULL,
+	 LastEditUserName            nvarchar(255)  DEFAULT '' NOT NULL,
+	 LastEditDate                datetime       DEFAULT getdate() NOT NULL,
+	 Taxis                       int            DEFAULT 0 NOT NULL,
+	 ContentGroupNameCollection  nvarchar(255)  DEFAULT '' NOT NULL,
+	 Tags                        nvarchar(255)  DEFAULT '' NOT NULL,
+	 SourceID                    int            DEFAULT 0 NOT NULL,
+	 ReferenceID                 int            DEFAULT 0 NOT NULL,
+	 IsChecked                   varchar(18)    DEFAULT '' NOT NULL,
+	 CheckedLevel                int            DEFAULT 0 NOT NULL,
+	 Comments                    int            DEFAULT 0 NOT NULL,
+	 Photos                      int            DEFAULT 0 NOT NULL,
+	 Teleplays                   int            DEFAULT 0 NOT NULL,
+	 Hits                        int            DEFAULT 0 NOT NULL,
+	 HitsByDay                   int            DEFAULT 0 NOT NULL,
+	 HitsByWeek                  int            DEFAULT 0 NOT NULL,
+	 HitsByMonth                 int            DEFAULT 0 NOT NULL,
+	 LastHitsDate                datetime       DEFAULT getdate() NOT NULL,
+	 SettingsXML                 ntext          DEFAULT '' NOT NULL,
+	 Title                       nvarchar(255)  DEFAULT '' NOT NULL,
+	 SubTitle                    nvarchar(255)  DEFAULT '' NOT NULL,
+	 ImageUrl                    varchar(200)   DEFAULT '' NOT NULL,
+	 VideoUrl                    varchar(200)   DEFAULT '' NOT NULL,
+	 FileUrl                     varchar(200)   DEFAULT '' NOT NULL,
+	 LinkUrl                     nvarchar(200)  DEFAULT '' NOT NULL,
+	 Content                     ntext          DEFAULT '' NOT NULL,
+	 Summary                     ntext          DEFAULT '' NOT NULL,
+	 Author                      nvarchar(255)  DEFAULT '' NOT NULL,
+	 Source                      nvarchar(255)  DEFAULT '' NOT NULL,
+	 IsRecommend                 varchar(18)    DEFAULT '' NOT NULL,
+	 IsHot                       varchar(18)    DEFAULT '' NOT NULL,
+	 IsColor                     varchar(18)    DEFAULT '' NOT NULL,
+	 IsTop                       varchar(18)    DEFAULT '' NOT NULL,
+	 AddDate                     datetime       DEFAULT getdate() NOT NULL,
+	 CheckTaskDate               datetime       DEFAULT getdate() NULL,
+	 UnCheckTaskDate             datetime       DEFAULT getdate() NULL,
+	 MemberName                  nvarchar(50)   DEFAULT '' NOT NULL,
+CONSTRAINT PK_bairong_MLibDraftContent PRIMARY KEY NONCLUSTERED (ID)
+)
+GO 
 

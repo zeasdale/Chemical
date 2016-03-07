@@ -1,0 +1,160 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>用户中心</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link href="/Home/css/style.css" rel="stylesheet" type="text/css" />
+<script>var $pageInfo = { publishmentSystemID : 7399, channelID : 7416, contentID : 0, siteUrl : "/Home", homeUrl : "/Home/center", currentUrl : "http://siteserver.cn/Home/channels/userMessage.html", rootUrl : "http://siteserver.cn", apiUrl : "http://siteserver.cn" }</script>
+</head>
+<body>
+  
+  <div class="header"> 
+   <a class="logo" href="/"><img src="/Home/upload/images/2015/7/2917482614.png" width="208"/></a> 
+   <div class="headR"> 
+    <a class="cor_blue" id="spanUserName" href="javascript:;"></a>&nbsp;<a id="userMsgTip" href="/Home/channels/userMessage.html" style="display:none;">（新消息<span id="userMsgCount"></span>条）</a> &nbsp;&nbsp; 
+    <a id="btnLogout" href="javascript:void(0)" class="cor_blue">退出</a> | 
+    <a href="/">网站首页&gt;&gt;</a> 
+   </div> 
+  </div> 
+  <div class="navBg"> 
+   <div class="nav"> 
+    <ul id="channelUL" style="margin:0;">  
+         
+              <li>
+                  <a href="/Home" class="nav_a">
+                    首页
+                  </a>
+              </li> 
+            
+        
+           
+                <li>
+                  <a href="/Home/channels/changepwd.html" class="nav_a">
+                    账号安全
+                  </a>
+                </li> 
+                
+      
+           
+                <li>
+                  <a href="/Home/channels/info.html" class="nav_a">
+                    账号信息
+                  </a>
+                </li> 
+                
+      
+           
+                <li>
+                  <a href="/Home/channels/userMessage.html" class="nav_a nav_cuta">
+                    消息中心
+                  </a>
+                </li> 
+                
+      
+           
+                <li>
+                  <a href="/Home/contents.aspx" class="nav_a">
+                    投稿中心
+                  </a>
+                </li> 
+                
+      
+           
+                <li>
+                  <a href="http://cms.siteserver.cn/" class="nav_a">
+                    帮助中心
+                  </a>
+                </li> 
+                
+      
+    </ul> 
+   </div> 
+  </div>
+ 
+  <div class="mcon">
+    <div class="mcL mcLx1">
+ <ul id="accountMsgUrl">
+  
+   
+                    <li>
+                        <a href="/Home/channels/userMessage.html" class="m2menu_a m2menu_cuta">
+                            <img class="block" src="/Home/images/ml_ico12.png" width="35" height="35" />
+                            <img class="hidden" src="/Home/images/ml_ico12.png" width="35" height="35" />系统公告
+                        </a>
+                    </li>
+                
+  
+   
+                    <li>
+                        <a href="/Home/channels/userMessageNotice.html" class="m2menu_a">
+                            <img class="block" src="/Home/images/ml_ico13.png" width="35" height="35" />
+                            <img class="hidden" src="/Home/images/ml_ico13.png" width="35" height="35" />系统消息
+                        </a>
+                    </li>
+                
+  
+  </ul>
+</div>
+<script>
+        function getUrlVar(key) {
+           var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search);
+           return result && decodeURIComponent(result[1]) || "";
+       }
+       var returnUrl = getUrlVar("returnUrl");
+       if(returnUrl.indexOf("userMessage.html") >= 0)
+          $("#accountMsgUrl").find("a").eq(0).addClass("m2menu_cuta");
+       else if(returnUrl.indexOf("userMessageNotice.html") >= 0)
+          $("#accountMsgUrl").find("a").eq(1).addClass("m2menu_cuta");
+</script> 
+    <div class="mcR mcRx2">
+      <div class="mc4_top">
+        
+        <a class="mc4_a1 mc4_cuta1" id="systemNotice" href="userMessage.html">系统公告</a>
+        <a class="mc4_a1" id="systemMsg" href="userMessageNotice.html">系统消息</a>
+      </div>
+      <div class="mc4List">
+        <ul id="ulMessage"></ul>
+        <div class="clear"></div>
+      </div>
+      <div class="mpage" id="divPageLink">
+        <span class="mpage_Nonum" id="spanTotal">共0条</span>
+        <a href="#" class="mpage_num">上一页</a>
+        <a href="#" class="mpage_num mpage_cutnum">1</a>
+        <a href="#" class="mpage_num">下一页</a>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="mfm_footer">
+        北京百容千域软件技术开发有限公司 &nbsp; 版权所有 Copyright ? 2003-2015<br />
+        Powered by SiteServer CMS &nbsp; 京ICP备10013847号
+</div>     
+  
+</body>
+</html>
+<script src="/Home/js/lib.js"></script>
+    <!--提示信息弹出层 开始-->
+   <!--<div class="mlayBg hide"></div>
+    <div class="mlay_d hide">
+        <div class="mlay_t"><span class="fl">消息提醒</span><img class="mrclose" src="/Home/images/m2close.jpg" width="31" height="26" /></div>
+        <div class="mlay_ul">
+            <ul>
+                <li class="mlay_li01"><span class="mlay_s2" id="spanTipsMessage" style="margin-left: 65px;line-height:0px;">绑定手机绑定手机绑定手机绑定手机绑定手机绑定手机绑定手机</span></li>
+                <li>
+                    <span class="mlay_s1">&nbsp;</span><button type="button" style="width:116px;left: 50px;" class="pubBtn mlay_btn" id="btnCloseTips"><span>确定</span></button>
+                </li>
+            </ul>
+        </div>
+    </div>-->
+
+    <div class="mlayBg hide"></div> 
+    <div class="mLayOk hide">
+        <span class="mLayOk_s1"><img src="/Home/images/nm_ico1.jpg" /><span style="top:0px;" id="spanTipsMessage"></span></span>
+        <span class="mLayOk_s2"></span>
+        <span class="mLayOk_s3"><a href="javascript:;" id="btnCloseTips" class="mLayOk_btn2">关闭</a></span>
+  </div>
+    <!--提示信息弹出层 结束--> 
+<script src="/Home/js/app.js" id="controllerName" data-controller-name="userMessage"></script>
+

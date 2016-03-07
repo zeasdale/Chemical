@@ -1,0 +1,39 @@
+<div id="top">
+    <div class="content">
+        <ul class="menu">
+            <stl:if testtype="ChannelName" testoperate="Equals" testvalue="首页">
+                <stl:successtemplate>
+                    <li><a class="on" href="{Stl.SiteUrl}/">集团首页</a></li>
+                </stl:successtemplate>
+                <stl:failuretemplate>
+                    <li><a href="{Stl.SiteUrl}/">集团首页</a></li>
+                </stl:failuretemplate>
+            </stl:if>
+            <stl:channels channelindex="首页" groupchannel="导航">
+                <stl:if testtype="UpChannelOrSelf">
+                    <stl:successtemplate>
+                        <li>
+                            <stl:a class="on"></stl:a>
+                            <div id="sub_menu">
+                                <stl:channels>
+                                    <stl:a></stl:a>
+                                </stl:channels>
+                            </div>
+                        </li>
+                    </stl:successtemplate>
+                    <stl:failuretemplate>
+                        <li>
+                            <stl:a></stl:a>
+                            <div id="sub_menu">
+                                <stl:channels>
+                                    <stl:a></stl:a>
+                                </stl:channels>
+                            </div>
+                        </li>
+                    </stl:failuretemplate>
+                </stl:if>
+            </stl:channels>
+        </ul>
+        <span class="lan"><a href="javascript:;" class="f_arial">ENGLISH</a>|<a href="javascript:;" class="fc_999">中文</a></span>
+    </div>
+</div>

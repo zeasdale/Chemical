@@ -144,7 +144,7 @@ function checkAttributeValueByName(attributeName) {
     var obj = document.getElementById(attributeName);
     if (obj) {
         var isRequire = obj.getAttribute("isRequire");
-        var value = $("input[name='" + attributeName + "']:checked").val();
+        var value = $("input[name='" + attributeName + "']:checked").val() || $("select[name='" + attributeName + "']").val();
         var errorMessage = obj.getAttribute("errorMessage");
         var displayName = obj.getAttribute("displayName");
         var minNum = parseInt(obj.getAttribute("minNum"));
@@ -163,7 +163,7 @@ function checkFormValueById(formId) {
         for (i = 0; i < myArray.length; i++) {
             var item = myArray.item(i);
             if (item.getAttribute("isValidate") == "true") {
-                if (item.getAttribute("isListItem") == "true") {
+                if (item.getAttribute("islistitem") == "true") {
                     if (checkAttributeValueByName(item.getAttribute("id")) == false) {
                         isChecked = false;
                     }

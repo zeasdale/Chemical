@@ -995,6 +995,7 @@ TemplateTitle      nvarchar(50)    DEFAULT '' NOT NULL,
 TemplateContent    ntext           DEFAULT '' NOT NULL,
 IsEnabled          varchar(18)     DEFAULT '' NOT NULL,
 ClassifyID         int             DEFAULT 0 NOT NULL,
+AddDate         datetime     DEFAULT getdate() NOT NULL,
 CONSTRAINT PK_siteserver_WebsiteMessageReplayTemplate PRIMARY KEY NONCLUSTERED (ID)
 )
 go
@@ -1191,76 +1192,7 @@ CREATE TABLE siteserver_AdvImageContent(
     CONSTRAINT PK_siteserver_AdvImageContent PRIMARY KEY NONCLUSTERED (ID)
 )
 go
-
------by 20151109 sofuny  学习中心数据表
------学习中习分类
-CREATE TABLE siteserver_LearningClassify(
-ItemID                 int             IDENTITY(1,1),
-ItemName               nvarchar(50)    DEFAULT '' NOT NULL,
-ItemIndexName          nvarchar(50)    DEFAULT '' NOT NULL,
-ParentID               int             DEFAULT 0 NOT NULL,
-ParentsPath            varchar(255)    DEFAULT '' NOT NULL,
-ParentsCount           int             DEFAULT 0 NOT NULL,
-ChildrenCount          int             DEFAULT 0 NOT NULL,
-ContentNum             int             DEFAULT 0 NOT NULL,
-PublishmentSystemID    int             DEFAULT 0 NOT NULL,
-Enabled                varchar(18)     DEFAULT '' NOT NULL,
-IsLastItem             varchar(18)     DEFAULT '' NOT NULL,
-Taxis                  int             DEFAULT 0 NOT NULL,
-AddDate                datetime        DEFAULT getdate() NOT NULL,
-UserName               nvarchar(50)    DEFAULT '' NOT NULL,
-CONSTRAINT PK_siteserver_LearningClassify PRIMARY KEY NONCLUSTERED (ItemID)
-)
-go
-CREATE CLUSTERED INDEX IX_siteserver_LearningClassify_Taxis ON siteserver_LearningClassify(Taxis)
-go
-
------学习中习区域
-CREATE TABLE siteserver_LearningArea(
-ItemID                 int             IDENTITY(1,1),
-ItemName               nvarchar(50)    DEFAULT '' NOT NULL,
-ItemIndexName          nvarchar(50)    DEFAULT '' NOT NULL,
-ParentID               int             DEFAULT 0 NOT NULL,
-ParentsPath            varchar(255)    DEFAULT '' NOT NULL,
-ParentsCount           int             DEFAULT 0 NOT NULL,
-ChildrenCount          int             DEFAULT 0 NOT NULL,
-ContentNum             int             DEFAULT 0 NOT NULL,
-LearningClassifyID     int             DEFAULT 0 NOT NULL,
-PublishmentSystemID    int             DEFAULT 0 NOT NULL,
-Enabled                varchar(18)     DEFAULT '' NOT NULL,
-IsLastItem             varchar(18)     DEFAULT '' NOT NULL,
-Taxis                  int             DEFAULT 0 NOT NULL,
-AddDate                datetime        DEFAULT getdate() NOT NULL,
-UserName               nvarchar(50)    DEFAULT '' NOT NULL,
-CONSTRAINT PK_siteserver_LearningArea PRIMARY KEY NONCLUSTERED (ItemID)
-)
-go
-CREATE CLUSTERED INDEX IX_siteserver_LearningArea_Taxis ON siteserver_LearningArea(Taxis)
-go
-
-----学习中心信息表
-CREATE TABLE siteserver_LearningCentre(
-LearningCentreID       int              IDENTITY(1,1),
-LearningClassifyID     int              DEFAULT 0 NOT NULL,
-LearningCentreName     nvarchar(200)    DEFAULT '' NOT NULL,
-LearningAreaID         int              DEFAULT 0 NOT NULL,
-LearningCentreAddress  nvarchar(255)    DEFAULT '' NOT NULL,
-Explain                nvarchar(255)    DEFAULT '' NOT NULL,
-Phone                  nvarchar(100)     DEFAULT '' NOT NULL,
-Longitude              nvarchar(50)     DEFAULT '' NOT NULL,
-Latitude               nvarchar(50)     DEFAULT '' NOT NULL,
-LogoUrl                nvarchar(255)    DEFAULT '' NOT NULL,
-ContentNum             int             DEFAULT 0 NOT NULL,
-Enabled                varchar(18)     DEFAULT '' NOT NULL,
-PublishmentSystemID    int              DEFAULT 0 NOT NULL,
-Taxis                  int             DEFAULT 0 NOT NULL,
-AddDate                datetime         DEFAULT getdate() NOT NULL,
-UserName               nvarchar(50)     DEFAULT '' NOT NULL,
-CONSTRAINT PK_siteserver_LearningCentre PRIMARY KEY NONCLUSTERED (LearningCentreID)
-)
-go
-CREATE CLUSTERED INDEX IX_siteserver_LearningCentre_Taxis ON siteserver_LearningCentre(Taxis)
-go
+ 
 
 ---by 20151124 智能推送
 ----会员浏览统计表
@@ -1276,6 +1208,77 @@ AddDate                datetime         DEFAULT getdate() NOT NULL,
 CONSTRAINT PK_siteserver_ViewsStatistics PRIMARY KEY NONCLUSTERED (ID)
 )
 go 
+
+
+----分支机构管理表 
+-----分支机构分类
+CREATE TABLE siteserver_OrganizationClassify(
+ItemID                 int             IDENTITY(1,1),
+ItemName               nvarchar(50)    DEFAULT '' NOT NULL,
+ItemIndexName          nvarchar(50)    DEFAULT '' NOT NULL,
+ParentID               int             DEFAULT 0 NOT NULL,
+ParentsPath            varchar(255)    DEFAULT '' NOT NULL,
+ParentsCount           int             DEFAULT 0 NOT NULL,
+ChildrenCount          int             DEFAULT 0 NOT NULL,
+ContentNum             int             DEFAULT 0 NOT NULL,
+PublishmentSystemID    int             DEFAULT 0 NOT NULL,
+Enabled                varchar(18)     DEFAULT '' NOT NULL,
+IsLastItem             varchar(18)     DEFAULT '' NOT NULL,
+Taxis                  int             DEFAULT 0 NOT NULL,
+AddDate                datetime        DEFAULT getdate() NOT NULL,
+UserName               nvarchar(50)    DEFAULT '' NOT NULL,
+CONSTRAINT PK_siteserver_OrganizationClassify PRIMARY KEY NONCLUSTERED (ItemID)
+)
+go
+CREATE CLUSTERED INDEX IX_siteserver_OrganizationClassify_Taxis ON siteserver_OrganizationClassify(Taxis)
+go
+
+-----分支机构区域
+CREATE TABLE siteserver_OrganizationArea(
+ItemID                 int             IDENTITY(1,1),
+ItemName               nvarchar(50)    DEFAULT '' NOT NULL,
+ItemIndexName          nvarchar(50)    DEFAULT '' NOT NULL,
+ParentID               int             DEFAULT 0 NOT NULL,
+ParentsPath            varchar(255)    DEFAULT '' NOT NULL,
+ParentsCount           int             DEFAULT 0 NOT NULL,
+ChildrenCount          int             DEFAULT 0 NOT NULL,
+ContentNum             int             DEFAULT 0 NOT NULL,
+ClassifyID     	       int             DEFAULT 0 NOT NULL,
+PublishmentSystemID    int             DEFAULT 0 NOT NULL,
+Enabled                varchar(18)     DEFAULT '' NOT NULL,
+IsLastItem             varchar(18)     DEFAULT '' NOT NULL,
+Taxis                  int             DEFAULT 0 NOT NULL,
+AddDate                datetime        DEFAULT getdate() NOT NULL,
+UserName               nvarchar(50)    DEFAULT '' NOT NULL,
+CONSTRAINT PK_siteserver_OrganizationArea PRIMARY KEY NONCLUSTERED (ItemID)
+)
+go
+CREATE CLUSTERED INDEX IX_siteserver_OrganizationArea_Taxis ON siteserver_OrganizationArea(Taxis)
+go
+
+----分支机构信息表
+CREATE TABLE siteserver_OrganizationInfo(
+ID                     int              IDENTITY(1,1),
+ClassifyID             int              DEFAULT 0 NOT NULL,
+OrganizationName       nvarchar(200)    DEFAULT '' NOT NULL,
+AreaID                 int              DEFAULT 0 NOT NULL,
+OrganizationAddress    nvarchar(255)    DEFAULT '' NOT NULL,
+Explain                nvarchar(255)    DEFAULT '' NOT NULL,
+Phone                  nvarchar(100)    DEFAULT '' NOT NULL,
+Longitude              nvarchar(50)     DEFAULT '' NOT NULL,
+Latitude               nvarchar(50)     DEFAULT '' NOT NULL,
+LogoUrl                nvarchar(255)    DEFAULT '' NOT NULL,
+ContentNum             int              DEFAULT 0 NOT NULL,
+Enabled                varchar(18)      DEFAULT '' NOT NULL,
+PublishmentSystemID    int              DEFAULT 0 NOT NULL,
+Taxis                  int              DEFAULT 0 NOT NULL,
+AddDate                datetime         DEFAULT getdate() NOT NULL,
+UserName               nvarchar(50)     DEFAULT '' NOT NULL,
+CONSTRAINT PK_siteserver_OrganizationInfo PRIMARY KEY NONCLUSTERED (ID)
+)
+go
+CREATE CLUSTERED INDEX IX_siteserver_OrganizationInfo_Taxis ON siteserver_OrganizationInfo(Taxis)
+go
 
 
 CREATE INDEX IX_siteserver_MD_N ON siteserver_MenuDisplay(PublishmentSystemID)

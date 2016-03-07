@@ -1,0 +1,32 @@
+<div class="header"> 
+   <a class="logo" href="/"><img src="{Stl.usercenterLogo}" width="208" height="26" /></a> 
+   <div class="headR"> 
+    <a class="cor_blue" id="spanUserName" href="javascript:;"></a>&nbsp;<a id="userMsgTip" href="{stl.siteurl}/channels/userMessage.html" style="display:none;">（新消息<span id="userMsgCount"></span>条）</a> &nbsp;&nbsp; 
+    <a id="btnLogout" href="javascript:void(0)" class="cor_blue">退出</a> | 
+    <a href="/">网站首页&gt;&gt;</a> 
+   </div> 
+  </div> 
+  <div class="navBg"> 
+   <div class="nav"> 
+    <ul id="channelUL">  
+       <stl:channels channelindex="首页" scope="SelfAndChildren" groupchannel="主导航"> 
+           <stl:if testtype="channelname" testoperate="equals" testvalue="消息中心">
+                <stl:successtemplate>
+                <li>
+                  <stl:a class="nav_a nav_cuta">
+                    <stl:channel type="Title"></stl:channel>
+                  </stl:a>
+                </li> 
+                </stl:successtemplate>
+                <stl:failuretemplate>
+                <li>
+                  <stl:a class="nav_a">
+                    <stl:channel type="Title"></stl:channel>
+                  </stl:a>
+                </li> 
+                </stl:failuretemplate>
+           </stl:if>
+     </stl:channels> 
+    </ul> 
+   </div> 
+  </div>

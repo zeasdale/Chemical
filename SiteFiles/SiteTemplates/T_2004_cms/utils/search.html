@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>搜索结果页</title>
+    <link rel="shortcut icon" href="/images/ico.ico" type="image/x-icon" />
+    <link href="/css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/autowidth.js"></script>
+<script>var $pageInfo = { publishmentSystemID : 1, channelID : 1, contentID : 0, siteUrl : "", homeUrl : "/center", currentUrl : "/utils/search.html", rootUrl : "", apiUrl : "http://localhost:424/api" }</script>
+</head>
+<body>
+<script type="text/javascript">!window.jQuery&&document.write('<script src="/sitefiles/bairong/jquery/jquery-1.9.1.min.js" language="javascript"></'+'script>');</script>
+
+    <!--head-->
+    <div id="top">
+    <div class="content">
+        <ul class="menu">
+            
+                    <li><a class="on" href="/">集团首页</a></li>
+                
+            
+                
+                        <li>
+                            <a href="/channels/3.html">关于集团</a>
+                            <div id="sub_menu">
+                                
+                                    <a href="/channels/3.html">集团介绍</a>
+                                
+                                    <a href="/channels/4.html">集团高管</a>
+                                
+                                    <a href="/channels/5.html">发展历程</a>
+                                
+                                    <a href="/channels/6.html">企业荣誉</a>
+                                
+                            </div>
+                        </li>
+                    
+            
+                
+                        <li>
+                            <a href="/channels/8.html">产品中心</a>
+                            <div id="sub_menu">
+                                
+                                    <a href="/channels/8.html">信息产业</a>
+                                
+                                    <a href="/channels/9.html">安防产业</a>
+                                
+                                    <a href="/channels/10.html">节能环保</a>
+                                
+                            </div>
+                        </li>
+                    
+            
+                
+                        <li>
+                            <a href="/channels/15.html">股东天地</a>
+                            <div id="sub_menu">
+                                
+                                    <a href="/channels/15.html">临时公告</a>
+                                
+                                    <a href="/channels/18.html">股市行情</a>
+                                
+                                    <a href="/channels/19.html">治理制度</a>
+                                
+                            </div>
+                        </li>
+                    
+            
+                
+                        <li>
+                            <a href="/channels/25.html">集团之声</a>
+                            <div id="sub_menu">
+                                
+                                    <a href="/channels/25.html">集团新闻</a>
+                                
+                                    <a href="/channels/28.html">视频新闻</a>
+                                
+                            </div>
+                        </li>
+                    
+            
+        </ul>
+        <span class="lan"><a href="javascript:;" class="f_arial">ENGLISH</a>|<a href="javascript:;" class="fc_999">中文</a></span>
+    </div>
+</div>
+    <!--head-->
+    <div id="main" class="zy gdtd">
+        <div class="head">
+    <div class="logo">
+        <a href="/">
+            <img src="/images/logo.jpg" width="222px" height="40px" />
+        </a>
+        <span>创建世界一流高科技企业</span>
+    </div>
+    <div class="search">
+        <form id="searchForm_49634" action="/utils/search.html" target="_blank"><style type="text/css"></style><script type="text/javascript">
+function relatedwordSearch(element){
+      if(!!element){
+         relatedwordSet(element);
+         document.getElementById('searchForm_49634').submit();
+         return false;
+      }
+}
+function relatedwordSet(element){
+     if(!!element){
+         $("input[name='word']").val($(element).attr("value"));
+     }
+}
+function stlSearchwordRelated_searchForm_49634(){
+      var searchword = $('input[name="word"]').val();
+      var filterSearchwordDataTemplate = $("#relatedwordtemplate_searchForm_49634").html();
+      if(!searchword){
+            $('#relatedwordpanel_searchForm_49634').html('未找到相关内容');
+            $('#relatedwordpanel_searchForm_49634').css('display','none');
+            return false;
+      }
+      else{
+           $.get('/sitefiles/services/cms/PageService.aspx?type=Type_GetSearchwords&publishmentSystemID=1', {searchword:searchword},function(data){
+           if(data.length == 0){                                                                                                                                     
+               $('#relatedwordpanel_searchForm_49634').html('未找到相关内容');
+               $('#relatedwordpanel_searchForm_49634').css('display','none');
+               return false;
+           }
+           else{
+                $('#relatedwordpanel_searchForm_49634').html('');
+                data=eval("("+data+")");
+                for(var i=0;i<data.length;i++){
+                $('#relatedwordpanel_searchForm_49634').append(filterSearchwordDataTemplate.replace(/{word}/g,data[i].searchWord)
+                .replace(/{resultcount}/g,data[i].searchResultCount));
+                }
+                $('#relatedwordpanel_searchForm_49634').css('display','block');
+           }
+           });
+     }
+}
+</script>
+                <input class="input1" placeholder="请输入关键词" type="text" name="word" onkeyup="stlSearchwordRelated_searchForm_49634()" autocomplete="off"/>
+                <input class="ss" type="submit" value="搜索" onclick="document.getElementById('searchForm_49634').submit();return false;"/>
+                <ul id="relatedwordpanel_searchForm_49634"></ul>
+                <script id="relatedwordtemplate_searchForm_49634" type="text/html">
+                    <li><a style="cursor:pointer;" onmouseover="relatedwordSet(this);" onclick="relatedwordSearch(this);" value="{word}" target="_blank">{word} 大约{resultcount}个结果</a></li>
+                </script>
+        <input type="hidden" id="channelID" name="channelID" value="1" /></form>
+    </div>
+</div>
+        <div id="content">
+            <div class="conL3">
+                <h2 class="com1">搜索结果</h2>
+                <div class="list1">
+                    <div id="ajaxElement_1_916"><img src="/sitefiles/bairong/icons/loading.gif" /></div>
+<script type="text/javascript" language="javascript">
+function stlUpdateajaxElement_1_916(pageIndex)
+{
+    var url = '/sitefiles/services/cms/search/output.aspx?publishmentSystemID=1';
+
+    var queryString = document.location.search;
+    var queryString2 = '';
+    
+	if (queryString == null || queryString.length <= 1){queryString = '';}else{
+        queryString = queryString.substring(1);
+        var arr = queryString.split('&');
+        for(var i=0; i < arr.length; i++) {
+            var item = arr[i];
+            var arr2 = item.split('=');
+            if (arr2 && arr2.length == 2){
+			    queryString2 += '&' + arr2[0] + '=' + encodeURIComponent(arr2[1]);
+            }else{queryString2 += '&' + item}
+		}
+        queryString = queryString2;
+    }
+
+    var pars = "ajaxDivID=ajaxElement_1_916&pageNum=0&isHighlight=False&isRedirectSingle=False&isDefaultDisplay=False&dateAttribute=AddDate&charset=utf-8&successTemplateString=ZL1BbhCng5tR7l7ETcUpL64tBJW0add029dI8Ml3jUgWjBUqGAA0slash04cAlcP4DTJUluPasHx9eEM4EQGT0slash0DAQLjD5ftHz0slash05nLzJ2JKoq3sBPEBwRxPuz1C4iZIhVSGe9cXwZm8tBcZXIf8fsDK8MPRBYTpdl2xsInaPqQdBWexHpT660add0n6bkBsxpo8Wq4HBldlXhtZQz7tUKVSjYYC5uNorFEoheLZcXAe4LjgRT5fVhYgId2C5pTAX4tombNuUw5envFE6P3B3kK2QejxlbehBoZ6s0slash0t1Fx7L12w2KZKZtxpejpBxmF2O0slash0o8rwD2kqkdRqLMhZvNlsu3o34sLsuQtkBE5nXVxJZ8c2Q6QCDulBh8YJBTZJoEP0QJd1ckgVMkwj0slash0VwchORkwiY6Wjc0slash00add00add0pRpvT1a9eXEv9n5bf6ZGtmt0add05h679QNXGQW1NSWX0add0B52jLGIOT4npj06KymvX9Z0add00add0ssbcIyubgNvHsuFgfWaF4v6sOM42Ep0slash0PMvhHQQ0add0NDG73Y4hLbTfgpegIGsTfO2U39wErOp63ZO5EJGL48R15W5AmXIvFkaFCcoVHDeIChYO5Vvc7t20add0r0add0gfvRrj5FDKW78kSrBsDHoyBLg1FyOQpCXdxlaoYXtgJEJOKiBGBpWellK3aj0y4TNb7khpvSappVgdgv4A0slash0nLsW3Q348rr0AirGP82tzvjsR6GxehF0slash0rl4NsV3owHkQLvsjIoeWc2ysqWbOA93byNEgRD3LLvP0add0O0slash0ItjJFPRSDukgqelfwCNHH0slash0TBmxIuoOEPM4SJB0add0cGPBKRDBnHKaWAA3T5Sl6rZqnRHesN2tlmY5cLNqiyTVskobZnTKkNMBdjdd7doK0slash01WuvRILIghtA7TmsvuIu3H7BM0add0Fb0slash0jvG8HAmjAGse3yjUj0gRg5iQD0slash0NM4aSgiK5wefGZEpH9ok9ko0slash0ZTsvBl0F68C11wCmmJA0add0muunOWQn6uV3q0ZBD0slash010add0g2YWiPGqxivnaj4N0eZqvle2TDIe0g1829lW3NKcgPH0slash0IQGN00U1MBUW9ro5vVWc62qIq1PWrqD0add0tbXl5veKe6szge0add0P0n9c0G4V7G5BN22vf8HIi7LYdsJ7v4eCpPE0add01QqaUP0add0oTGqcRs8PQVQcG1HtEhlJzuGpq4iGntbnx8xcBOoMz0slash0K1nm8kg0add0UayhC3r3VwclMYMVlVHBdg0add08ES49Ji879M8mD0add0weOXUQcf30slash02zdfHbTFua0slash0VHYioTqNuHHxftuHe9ArZPJodKkzpU3RcuVbmhw0add0neMuNLre9nScupipom0DvZ0slash04aD0WvCT6KLSCFsIpJHReyL7z0slash0hZvfXotNIUH59hnSNav3yjClSHdfjkCAq5OiKAFHQNicNpjZwpyrTEk75WcC14jLRbWNyjlkCcfx263B0add0h1rDohthVLDQwfSNXVTHHVxytmpnHNQSzf4VRiCoGtSorrnoPQ4Hd0slash0Nx0add08nPXMHHPYxtPKsW1c0add0IpkEtEVN10slash0P0add0M7HQURu9cDLpRJoI6pS0slash0A9QR68Hu0raqY2Jdp9to05Pb50add04nWB0add0iLEvAZyQD5CppTl309jmm9aMkaIbho9pPRhoL7rGAyMTKOHJR0slash0INSx9xD0add0Hrr0slash0fmI0add0QTNKl0goy5rDp6QAr5f4wCf3wBKVmE0add0L3fpvxdXy26sldg01bQzkukfIHDwrrOVnMrMtQHTotU8IvSsaWm7pW8McJ0QarMbXw0slash0EqlPki85szNZzhqFEG70add0z0slash07hZTQtlY3HXzr1nzTWFCszDq9OAXUKih3dNPPyxiNcxhnkFtNkaIZ4TMm06COqVi0add0X3gxyVSCz7KIw3E4F1RzI1GAaHx7994DJ161Xp7EAjWVLa7ud1xOOxd2rmm3Zc5XnyMuFlhrwlkE3toRlnymLYbEgg18Im2IJudfzOzsAIs0slash0eKHyg2ToEu2DuqLjRrvZE0add0hVyqoXjzdv5JO8BvhEG0WjuXsUuHPQ7t9SKq6fI3yC970add08z50FI4XeKp5vchyhQOPbM0hvZeZe36qGA79q1HTh0add0PUd3jdGuMjBZCd3RAPoxl0add06mGtnVngyWwbtk6Tsv2L0add0XS1VFLjJaDD5YL4GoITLfemN3iL9LwtTAaLK5eSddWA5YFcVuu9lhGXFPMmnOVSLQnt0add0T5Ebycc6iw6ec0U0slash0V8mgoR3G0add0ec0vmR0slash0kRvxLoGSxcft0fs3cNQnPe0slash0NWit4Wr8TZpRHeOsK0add0tJw9dhqTP4v9c1F6An9wsA0GNrTBRxJ2ArOTQOzOn5naMmFj0slash0KcYGmyEV5liOJ8stTmaVXHJxo8NnjsMWpexX46HRfkm70slash0MOIC29xtHecNm0MUbIBPl3kj9UA1y0slash0QCVAPfkHunrNbN90slash0Vs4C4Q1bKT7tyDfH9ifb4vQF1WB8mV0add0pfQOkYyopPqhUiNaglihylQtdODG9Kpq9rKZfGn0Mwx140slash0e1254qHZyTvyB0ImsKohgAM0slash0FHfqSljLVPlgoEJNIr0bmux0add0U7EP1rgyk9tYQfLt6Sq7N4jy20ciDVzPsk9Jt7E6M0Gf2UbsBuV6tCwVNV10slash0ZtlhepVYY0slash0X815nnUFhi6hus0slash0pYcPwg6qxNiL0add00add0NIC5ZoQeA0add0At57rhDgr0slash0rBx50slash0ws3oKhGfGxaXSjSz2fnSU2hFNBpJguzwB7Xk8vnrw6Nuj8ogjO0slash02v0KXfK5uqchW25O3EFgndRu7N4uXp3wNop0add0vl2SFXlOeBBc9y1Nw2kbFOdUOyNoQ0add0sGUt05s7QRUPPHkp0slash0ESSKHp2WG5PMsnMcL5F0add0i0add0jdexKGOxnuvLomexQkY3aTyJ7y1pMn6lsdWhQap53vSZdcBIa9MzD0add0eCwQHb6r0slash0F1dDsxg5Z220w5KFi1WsK0add0QAeR34UPn0slash0Uk3MzETbldyvG29CBt5n5e61ar18JC4zycPcK90add0odqePHD4kzoiuSuGJlctWvihef1pfsm0slash0wYu0slash0VILK70add0qkd88lwNV0mypDKoQ0slash0nsVNW4o7LmIPZohv3Y0slash00slash0EmCH62UmYGMsQV69j7oQeYgtktBS1gRu02T4uv0362gld1dd9r3vNfWZ0slash0yynnb3XSAVvrWlXFB0add0cwWtvfdQLWn4nqzdGxKfy0slash08YlXU0eiFSbfpl3sQh9EBhOQ6iFmnrLE4fOXmrtLIQGfmYZUrRNA4fCRzxWOavZP2AdVV8p9fwaSh8QfpObAhQLBQgN1cM2rg8bh0add01XhS0QxdQ1oFAOZA50add0NQw0equals0&failureTemplateString=C0U5Pd77t9aMHW6RZBLj0add0eF6rHtxdNA2rG2jdU7oZmCTZgHhav5S0add0IE9nCPAN9GEX9qkk8JSd94An8SWTMLYGqS3J9zA80add0qerkqssw0kUGJLgojHcfU3aGL2eFzzhkPpzkzN8lvU4p9FC0add05juaBAK0slash0QjbmT1Tc2jGMWrzXvMaVHXIHnGuZ6xPDhhBEA9oVPFGXy0slash0A0add0LZYOoOVXOG9rQwjJEuRo9CqlPXVpnrx3y3Fk05KBk0slash0yOe8rPay0vjvPhLBhlimr1kTV0OXScfHbHg5miNexXlHVlH2iT0slash0QIIYaCWV058r67bv6F0WQ0slash0aDrpvf6MLccZUWj7v3Y8OSWovCEUCJjkJJMVatviVV8ioHHbHANr22UTpGcnIySwuSmpDy9OtNI2CuBClAZunj0slash078uaftYQoDRDxJhJbkyPRZg0XJXvJret0add030add0JJ49UFl4Bw7n77agpGg5pFsWKTU43SUNu07yZRZRITlJm0WGUG8ax4gZH98akrDcO8Qy3mRn0add0Sky0add0o7nSHLQQTETybDeLlu0slash0glSBrCQornomyEChKYFuq4E7EA0slash0eFa0j7FeP5F6jTO7alUrEYLCPEbDwGHQemQcd6TfMJbdbnybK7nZCAB36aziYGKW0slash05vH0add0ctWszTx0AaJT6yc2rmPzRv0slash0i6iD6KW8jxlBiuOsiMCD5roS3OxtNaORQZomZKGdiEmAmGdMzFqZEdMjbvUV0V1I8xWMK6Xi7v4Uc51I6NF0V1SgQgc0slash038dCvzgDckNOFKuXGUM5EI6dtNjKLAIr0qZVXgMeiNGzORNWFQSxnmdDNWMDc8DqXR0TtoLoJWWJAvNPukeQoP7kPuXj0slash0VRtmgpjJR78cAqk6wDA0gYwmVzx1Jgby2Pi6t1VU0equals0&pageIndex=" + pageIndex + queryString;
+    jQuery.post(url, pars, 
+function(data, textStatus){
+   jQuery("#ajaxElement_1_916").html(data);
+});
+}
+function stlJumpajaxElement_1_916(selObj)
+{
+    stlUpdateajaxElement_1_916(selObj.options[selObj.selectedIndex].value);
+}
+stlUpdateajaxElement_1_916(0);
+</script>
+
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--footer-->
+    <div id="footer">
+    <div class="content">
+        <div class="fl">
+            <p class="fot_menu f16">
+                <a href="/contents/34/16.html">联系我们</a>
+                <a href="/channels/39.html">招聘信息</a>
+            </p>
+            <p>
+                <span></span><span>
+                    北京百容千域软件技术开发有限公司 版权所有 Copyright © 2003-2013 
+Powered by SiteServer CMS 
+                </span>
+            </p>
+            <p>京ICP备10013847号</p>
+            <p></p>
+            <div style="display:none">
+                <script language="javascript" type="text/javascript" src="js/16928597.js"></script>
+                <a href="http://www.51.la/?16928597" target="_blank" title="51.La 网站流量统计系统">网站统计</a>
+                <script type="text/javascript">
+                    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                    document.write(unescape("%3Cscript src=" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe44f12d8d9a43f80afadd7b34927893d type=text/javascript%3E%3C/script%3E"));
+                </script>
+                <script src="/js/h.js" type="text/javascript"></script>
+                <a href="javascript:;" target="_blank"><img border="0" src="/images/21.gif" width="20" height="20"></a>
+            </div>
+        </div>
+        <div class="fr f16">
+            <!-- JiaThis Button BEGIN -->
+            <div class="jiathis_style">
+                <span class="jiathis_txt">分享到：</span>
+                <a class="jiathis_button_weixin">微信</a>
+                <a class="jiathis_button_tsina">新浪微博</a>
+                <a class="jiathis_button_tqq">腾讯微博</a>
+                <a class="jiathis_button_qzone">QQ空间</a>
+                <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+                <a class="jiathis_counter_style"></a>
+            </div>
+            <script type="text/javascript">
+                var jiathis_config = {
+                    summary: "",
+                    shortUrl: false,
+                    hideMore: false
+                }
+            </script>
+            <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+            <!-- JiaThis Button END -->
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+    <!--footer-->
+    <script type="text/javascript" src="/js/xh_roll.js"></script>
+    <script>
+        $(function () {
+            jQuery('#mycarousel').jcarousel({
+                scroll: 1,
+                wrap: 'circular',
+                auto: 5
+            });
+        })
+    </script>
+</body>
+</html>

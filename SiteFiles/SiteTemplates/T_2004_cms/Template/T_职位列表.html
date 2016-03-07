@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>{Channel.Title}-{Stl.SiteName}</title>
+    <link rel="shortcut icon" href="{Stl.SiteUrl}/images/ico.ico" type="image/x-icon" />
+    <link href="{Stl.SiteUrl}/css/common.css" rel="stylesheet">
+    <script type="text/javascript" src="{Stl.SiteUrl}/js/autowidth.js"></script>
+</head>
+<body>
+    <!--head-->
+    <stl:include file="@/include/header.html"></stl:include>
+    <!--head-->
+    <div id="main" class="zy gytf zpxx">
+        <stl:include file="@/include/logo.html"></stl:include>
+        <div class="banner">
+            <img src="{Channel.ImageUrl}" width="1200" height="370">
+            <div class="text">
+                <h2>{Channel.Title}</h2>
+                <p>{Channel.Content}</p>
+            </div>
+        </div>
+        <div id="content">
+            <div class="conL1">
+                <h2>{Channel.Title}</h2>
+                <div class="zy_search" style="display:none;">
+                    <form action="http://www.thtf.com.cn/plus/search_talent.php" method="post" name="search_form">
+                        <input type="hidden" name="mid" value="28"><input type="hidden" name="dopost" value="search">
+                        <div class="xlc">
+                            <input name="gsmc" class="input_xlc" value="请选择产业公司">
+                            <ul style="display: none;">
+                                <li>计算机产业本部</li>
+                                <li>数字城市产业本部</li>
+                                <li>物联网应用本部</li>
+                                <li>多媒体产业本部</li>
+                                <li>半导体与照明产业本部</li>
+                                <li>知识网络产业本部</li>
+                                <li>军工产业本部</li>
+                                <li>环境科技产业本部</li>
+                                <li>同方威视</li>
+                                <li>同方人环</li>
+                                <li>同方国芯</li>
+                                <li>壹人壹本</li>
+                                <li>其他</li>
+                            </ul>
+                        </div>
+                        <div class="xlc">
+                            <input name="zwmc" class="input_xlc" value="请选择职位">
+                            <ul style="display: none;">
+                                <li class="">高级工程师</li>
+                                <li>业务员</li>
+                                <li>技术员</li>
+                                <li>项目经理</li>
+                            </ul>
+                        </div>
+                        <div class="xlc">
+                            <input name="gzdd" class="input_xlc" value="请选择工作地点">
+                            <ul style="display: none;">
+                                <li>北京</li>
+                                <li>深圳</li>
+                                <li>广州</li>
+                                <li>广东</li>
+                                <li>杭州</li>
+                                <li>福建</li>
+                            </ul>
+                        </div>
+                        <input style="display:none" type="text" name="q">
+                        <a href="javascript:;" class="btn_com btn_ss1">搜索</a>
+                    </form>
+                </div>
+                <div class="table_com1 mb30" id="zwlist">
+                    <ul class="clear">
+                        <li>公司名称</li>
+                        <li>职位名称</li>
+                        <li>工作地点</li>
+                        <li>查看职位</li>
+                        <li>申请职位</li>
+                    </ul>
+                    <stl:pagecontents pageNum="15">
+                        <ol class="clear">
+                            <li>{Content.SubTitle}</li>
+                            <li>{Content.Title}</li>
+                            <li>{Content.Author}</li>
+                            <li><a href="javascript:void(0);dig(zwck{Content.ID});" class="btn_com btn_sg1">查看</a></li>
+                            <li><a href="mailto:11111@qq.com" class="btn_com btn_sb1">申请</a></li>
+                            <!--查看和申请的href不要更改否则窗口不会弹出-->
+                        </ol>
+                    </stl:pagecontents>
+                    <p><br /><br /></p>
+                </div>
+                <div class="page">
+                    <stl:pageitem type="FirstPage">
+                        <a href="{Current.Url}">&lt;&lt;首页</a>
+                    </stl:pageitem>
+                    <stl:pageitem type="PreviousPage">
+                        <a href="{Current.Url}">&lt;&lt;上一页</a>
+                    </stl:pageitem>
+                    <stl:pageitem type="PageNavigation">
+                        <stl:successtemplate>
+                            <a href="{Current.Url}">{Current.Num}</a>
+                        </stl:successtemplate>
+                        <stl:failuretemplate>
+                            <a class="on">{Current.Num}</a>
+                        </stl:failuretemplate>
+                    </stl:pageitem>
+                    <stl:pageitem type="NextPage">
+                        <a href="{Current.Url}">下一页&gt;</a>
+                    </stl:pageitem>
+                    <stl:pageitem type="LastPage">
+                        <a href="{Current.Url}">尾页&gt;&gt;</a>
+                    </stl:pageitem>
+                </div>
+            </div>
+            <div class="conR3">
+                <div class="zpxx2BtnBox">
+                    <stl:a channelname="招聘流程">
+                        <span class="f_24 col_3">招聘流程</span><br />
+                        <span class="f_14 col_f">点击查看</span>
+                    </stl:a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--footer-->
+    <stl:include file="/include/footer.html"></stl:include>
+    <!--footer-->
+    <stl:contents>
+        <div class="tcc" id="zwck{Content.ID}">
+            <div class="align_r">
+                <a href="javascript:void(0)" id="zwclose">
+                    <img src="{Stl.SiteUrl}/images/close.gif" width="31" height="32" />
+                </a>
+            </div>
+            <div class="tcc_title">
+                <h3 class="f18 fc_blue2">{Content.Title}</h3>
+            </div>
+            <div class="info">
+                <span class="zpgs">招聘公司：{Content.SubTitle}</span>
+                <span>招聘起止时间：{Content.AddDate}</span>
+            </div>
+            <div class="tcc_content" style="overflow-x:hidden;width:540px">
+                <div class="table1 line3">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>工作地点：{Content.Author}</td>
+                            <td>学历要求：{Content.Source}</td>
+                            <td>性别要求：{Content.Sex}</td>
+                            <td>语言要求：{Content.YuYan}</td>
+                        </tr>
+                        <tr>
+                            <td>工作经验：{Content.JingYan}</td>
+                            <td>职位性质：{Content.XingZhi}</td>
+                            <td>职位薪资：{Content.XinZi}</td>
+                            <td>招聘人数：{Content.RenShu}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table2">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td valign="top">岗位职责：</td>
+                            <td valign="top">
+                                <stl:content type="Content"></stl:content>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">职位要求：</td>
+                            <td valign="top">
+                                <stl:content type="Summary"></stl:content>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="align_c btnarea zwbtn">
+                <a href="mailto:11111@qq.com" id="btn_ljsq" class="btn_com btn_bb1">立即申请</a>
+                <a href="javascript:void(0)" class="btn_com btn_bb3">关 闭</a>
+            </div>
+        </div>
+    </stl:contents>
+    <form action="http://www.thtf.com.cn/plus/diy.php" name="zp_form454" id="zp_form454" enctype="multipart/form-data" method="post">
+        <div class="tcc" id="zwsq454">
+            <div class="align_r"><a href="javascript:void(0)" id="zwclose"><img src="images/close.gif" width="31" height="32" /></a></div>
+            <div class="tcc_title">
+                <a href="/plus/view.php?aid=454" target="_blank" class="fr fc_blue2" style="margin-right:10px">查看职位描述</a><h3 class="f18">职位申请</h3>
+            </div>
+            <div class="info"><span class="zpgs">招聘公司：总部</span><span>招聘起止时间：2014-1-22</span></div>
+
+            <input type="hidden" name="action" value="post" />
+            <input type="hidden" name="diyid" value="3" />
+            <input type="hidden" name="do" value="2" />
+            <div class="tcc_content">
+                <div class="table3">
+
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th width="100"><span class="bt">*</span>姓名：</th>
+                            <td>
+                                <input type="text" name='name' class="input2" />
+                                <input type="text" name='ypzw' class="input2" value="运维服务专员" style="display:none" />
+                                <input type="text" name='ypgs' class="input2" value="总部" style="display:none" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><span class="bt">*</span>联系电话：</th>
+                            <td><input type="text" name='tel' class="input2" /></td>
+                        </tr>
+                        <tr>
+                            <th><span class="bt">*</span>上传简历：</th>
+                            <td>
+                                <input type="text" id="txt" class="input2">
+                                <input type="button" value="上传" size="30" onclick="intro.click()" class="btn_com btn_bb3">
+                                <input style="display:none" type="file" id="intro" onchange="txt.value=this.value" name="intro" size="1">
+
+                                <span class="zcgs">支持格式：.docx</span>
+                                <input type="hidden" name="dede_fields" value="name,text;tel,text;intro,addon;ypzw,text;ypgs,text" />
+                                <input type="hidden" name="dede_fieldshash" value="62b536a79d8b1f4428e43e646de45a1a" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td><a href="#" class="fc_blue2">简历模版下载</a></td>
+                        </tr>
+                    </table>
+
+                </div>
+
+            </div>
+            <div class="align_c btnarea" id="zwbtn"><a id="btn_tjsq" href="javascript:void(0);" class="btn_com btn_bb1" onclick="Javascript:return CheckForm454(this);">提交申请</a><a href="javascript:void(0)" class="btn_com btn_bb3">关 闭</a> </div>
+
+        </div>
+        <div class="tcc2 sqcg">
+            <div class="title">
+                <h3>职位申请</h3>
+                <a href="javascript:void(0);zp_form454.submit();" class="close"></a>
+            </div>
+            <div class="content">
+                <p>恭喜您，职位申请成功！</p>
+                <p class="btnarea"><a href="javascript:void(0);zp_form454.submit();" class="btn_confirm">确定</a></p>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript" language="javascript">
+        function CheckForm454() {
+            if (document.zp_form454.tel.value == "") {
+                alert("联系电话不能为空！");
+                document.zp_form454.tel.focus();
+                return false;
+            }
+            if (document.zp_form454.name.value == "") {
+                alert("姓名不能为空！");
+                document.zp_form454.name.focus();
+                return false;
+            }
+            if (document.zp_form454.intro.value == "") {
+                alert("请上传您的上传简历！");
+                document.zp_form454.intro.focus();
+                return false;
+            }
+
+            $(".sqcg").show();
+            $("#TB_overlay").show();
+
+            $("#test").click(function () {
+                $(".sqsb").show();
+            })
+            $(".sqcg .btn_confirm").click(function () {
+                $(".sqcg").hide();
+            });
+            $(".sqcg .close").click(function () {
+                $(".sqcg").hide();
+            });
+            $(".sqsb .btn_confirm").click(function () {
+                $(".sqsb").hide();
+            });
+            $(".sqsb .close").click(function () {
+                $(".sqsb").hide();
+            });
+
+
+        }
+    </script>
+    <div class="tcc2 sqsb">
+        <div class="title">
+            <h3>职位申请</h3>
+            <a href="javascript:void(0)" class="close"></a>
+        </div>
+        <div class="content">
+            <p>对不起，职位申请失败！</p>
+            <p class="btnarea"><a href="javascript:void(0)" class="btn_confirm">确定</a></p>
+        </div>
+    </div>
+    <div id="TB_overlay"></div>
+    <script>
+        function dig(el) {
+            $(el).show();
+            $("#TB_overlay").show();
+        }
+        $(function () {
+            //$("#zwlist .btn_sg1").click(function(){
+            //    $(".tcc").hide();
+            //    $("#TB_overlay,#zwck").show();
+            //  });
+            //  $("#zwlist .btn_sb1").click(function(){
+            //    $("#TB_overlay,#zwsq").show();
+            //  });
+            $("#btn_tjsq").click(function () {
+                $(".sqcg").show();
+            })
+            $("#btn_ljsq").click(function () {
+                $("#zwck").hide();
+                $("#zwsq").show();
+            })
+            $("#test").click(function () {
+                $(".sqsb").show();
+            })
+            $(".sqcg .btn_confirm").click(function () {
+                $(".tcc,.sqcg,#TB_overlay").hide();
+            });
+            $(".sqcg .close").click(function () {
+                $(".sqcg").hide();
+            });
+            $(".sqsb .btn_confirm").click(function () {
+                $(".tcc,.sqsb,#TB_overlay").hide();
+            });
+            $(".sqsb .close").click(function () {
+                $(".sqsb").hide();
+            });
+            $(".zwbtn .btn_bb3,#zwclose").click(function () {
+                $("#TB_overlay,.tcc").hide();
+            })
+        })
+    </script>
+</body>
+</html>
