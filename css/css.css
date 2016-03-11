@@ -221,23 +221,23 @@ a:active {
     background-image: url(../images/industry-435.jpg);
 }
 
-#gsry-title {
+#product-title {
     height: 35px;
     width: 258px;
-    background-image: url(../images/gsry.jpg);
+    background-image: url(../images/produce.jpg);
 }
 
-#gsry {
+#product {
     width: 253px;
     border: #CCC solid 1px;
-    height: 140px;
+    height: auto;
     margin-left: 2px;
     /*  background-image: url(../images/honor1.jpg);*/
 }
 
-#gsry img {
+#product img {
     width: 100%;
-    height: 100%;
+    height: 140px;
 }
 
 #mxzs-title {

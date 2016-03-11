@@ -50,7 +50,7 @@
                         </stl:contents>
                     </dl> -->
                     <table style="width:100%;">
-                        <stl:contents channelIndex="行业动态" totalNum="">
+                        <stl:contents channelIndex="行业动态" totalNum="8">
                             <tr style="border-bottom:1px dashed #ccc;">
                                 <td style="width:70%;height:30px;">
                                     <stl:a>{content.title}</stl:a>
@@ -62,41 +62,32 @@
                         </stl:contents>
                         <tr>
                             <td></td>
-                            <td><stl:a channelIndex="行业动态">更多>></stl:a></td>
+                            <td>
+                                <stl:a channelIndex="行业动态">更多>></stl:a>
+                            </td>
                         </tr>
                     </table>
                 </div>
                 <div id="middle-bottom"></div>
             </div>
             <!--box-middle-->
-            <div id="content-right">
-                <div id="gsry-title"></div>
-                <div id="gsry">
-                    <a href="javascript:void(0)">
-                        <img class="img-thumbnail" src="images/honor1.jpg" alt="" onclick="popimg(this)">
-                    </a>
-                </div>
-                <div id="gsry">
-                    <a href="javascript:void(0)">
-                        <img class="img-thumbnail" src="images/honor2.jpg" alt="" onclick="popimg(this)">
-                    </a>
-                </div>
-                <div id="test-right">
-                    <table>
-                        <tr>
-                            <td style="width:90px;height:90px;border-bottom:1px solid #ccc;">
-                                <a href="http://www.liminchem.com/" target="_blank"><img src="images/lihua.jpg" alt="" style=""></a>
-                            </td>
-                            <td style="width:90px;height:90px;border-bottom:1px solid #ccc;"><a href="http://www.liminchem.com/" target="_blank">利化分公司</a></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="http://www.zhenkai.zj.cn/" target="_blank"><img src="images/zhenkai.jpg" alt="" style="width:90px;height:90px;"></a>
-                            </td>
-                            <td><a href="http://www.zhenkai.zj.cn/" target="_blank">震凯分公司</a></td>
-                        </tr>
-                    </table>
-                </div>
+            <div id="content-right" style="overflow: hidden;">
+                <div id="product-title"></div>
+                <stl:marquee direction="Vertical" width="255" height="525">
+                    <stl:contents channelIndex="产品介绍" type="Content" totalNum="0" ellipsis="...">
+                        <div id="product" style="height:auto;">
+                            <stl:a target="_blank">
+                                <stl:content type="ImageUrl" class="img-thumbnail"></stl:content>
+                            </stl:a>
+                            <span style="color:red;font-size:14px;display: block;padding:5px 5px 0px 5px;">
+                                <stl:content type="Title"></stl:content>
+                            </span>
+                            <span style="padding:5px 5px 0px 5px;display:block;">
+                                <stl:content type="Content" wordNum="35"></stl:content>
+                            </span>
+                        </div>
+                    </stl:contents>
+                </stl:marquee>
             </div>
             <!--box-right-->
         </div>
