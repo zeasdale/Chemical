@@ -10,7 +10,7 @@
 #box {
     height: auto;
     font-size: 12px;
-    font-family: Microsoft Yahei;
+    font-family: Microsoft Yahei, "宋体", Arial, sans-serif;
     color: #000;
     width: 990px;
     margin-right: auto;
